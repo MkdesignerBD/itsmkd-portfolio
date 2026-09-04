@@ -14,7 +14,7 @@ function ProcessCard({ s }) {
   return (
     <div
       onMouseMove={handleMouseMove}
-      className="group relative bg-[#e9e9e9] hover:bg-white rounded-[34px] h-[520px] p-10 flex flex-col justify-between overflow-hidden border border-black/[0.04] hover:border-[#ff7a2f]/40 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_24px_50px_rgba(0,0,0,0.08),0_0_40px_rgba(255,122,47,0.25)] cursor-pointer"
+      className="group relative bg-[#e9e9e9] hover:bg-white rounded-[28px] sm:rounded-[34px] min-h-[400px] sm:h-[520px] p-7 sm:p-10 flex flex-col justify-between overflow-hidden border border-black/[0.04] hover:border-[#ff7a2f]/40 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_24px_50px_rgba(0,0,0,0.08),0_0_40px_rgba(255,122,47,0.25)] cursor-pointer"
     >
       {/* Interactive cursor spotlight glow */}
       <div
@@ -74,19 +74,19 @@ export default function WorkProcessSection() {
 
   return (
     <section id="workprocess" className="bg-[#f4f4f4]">
-      <div className="max-w-[1400px] mx-auto px-10 py-20">
-        <p className="text-[18px] text-black/70">Work Process</p>
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-16 md:py-20">
+        <p className="text-[16px] md:text-[18px] text-black/70">Work Process</p>
 
-        <h2 className="mt-6 leading-[1.05]">
-          <span className="block text-[48px] md:text-[54px] font-medium text-black/75">
+        <h2 className="mt-6 leading-[1.08]">
+          <span className="block text-[28px] sm:text-[40px] md:text-[54px] font-medium text-black/75 tracking-tight">
             Good design doesn’t happen by accident.
           </span>
-          <span className="block text-[48px] md:text-[54px] font-light text-black/35">
+          <span className="block text-[28px] sm:text-[40px] md:text-[54px] font-light text-black/35 tracking-tight">
             Here’s how I approach every project.
           </span>
         </h2>
 
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {steps.map((s) => (
             <ProcessCard key={s.no} s={s} />
           ))}

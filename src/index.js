@@ -29,6 +29,7 @@ const router = createBrowserRouter([
       { path: "service", element: <Service /> },
       { path: "tools", element: <Tools /> },
       { path: "digital-tools", element: <Tools /> },
+      { path: "feedback", element: <Tools /> },
       { path: "contact", element: <Contact /> },
       { path: "terms", element: <Terms /> },
       { path: "terms-and-conditions", element: <Terms /> },

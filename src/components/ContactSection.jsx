@@ -85,15 +85,15 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="bg-[#f4f4f4]">
-      <div className="max-w-[1400px] mx-auto px-10 py-20">
-        <p className="text-[18px] text-black/70">Contact</p>
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-16 md:py-20">
+        <p className="text-[16px] md:text-[18px] text-black/70">Contact</p>
 
-        <h2 className="mt-6 leading-[1.05]">
-          <span className="block text-[48px] md:text-[54px] font-medium text-black/75">
+        <h2 className="mt-6 leading-[1.08]">
+          <span className="block text-[28px] sm:text-[40px] md:text-[54px] font-medium text-black/75 tracking-tight">
             Not sure where to start?
           </span>
 
-          <span className="block text-[48px] md:text-[54px] font-light text-black/35">
+          <span className="block text-[28px] sm:text-[40px] md:text-[54px] font-light text-black/35 tracking-tight">
             A message is a good first step.
           </span>
         </h2>
@@ -187,7 +187,7 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={loading}
-              className="h-[56px] w-[170px] rounded-xl border border-black/35 text-black/80 hover:border-black/60 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="h-[56px] w-full sm:w-[170px] rounded-xl border border-black/35 text-black/80 hover:border-black/60 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium"
             >
               {loading ? "Sending..." : "Send Message"}
             </button>

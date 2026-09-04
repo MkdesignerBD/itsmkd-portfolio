@@ -12,8 +12,8 @@ export default function Footer() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06)_0%,rgba(11,11,11,0.92)_60%,rgba(11,11,11,1)_100%)]" />
       </div>
 
-      <div className="relative max-w-[1400px] mx-auto px-10 pt-20 pb-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-4">
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-10 pt-14 md:pt-20 pb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-10 lg:gap-4">
           {/* Left brand */}
           <div>
             <img
@@ -28,13 +28,13 @@ export default function Footer() {
           </div>
 
           {/* Right columns */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-14">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 lg:gap-14">
             {/* WEBSITE */}
             <div>
-              <div className="text-white text-[20px] tracking-wide uppercase">
+              <div className="text-white text-[16px] sm:text-[20px] tracking-wide uppercase font-medium">
                 WEBSITE
               </div>
-              <div className="mt-8 space-y-3 text-[18px]">
+              <div className="mt-6 sm:mt-8 space-y-2.5 sm:space-y-3 text-[15px] sm:text-[18px]">
                 {[
                   { label: "Home", to: "/" },
                   { label: "About", to: "/about" },
@@ -67,10 +67,10 @@ export default function Footer() {
 
             {/* LEGAL */}
             <div>
-              <div className="text-white text-[20px] tracking-wide uppercase">
+              <div className="text-white text-[16px] sm:text-[20px] tracking-wide uppercase font-medium">
                 LEGAL
               </div>
-              <div className="mt-8 space-y-3 text-[18px]">
+              <div className="mt-6 sm:mt-8 space-y-2.5 sm:space-y-3 text-[15px] sm:text-[18px]">
                 <Link
                   to="/terms"
                   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -90,10 +90,10 @@ export default function Footer() {
 
             {/* SOCIAL */}
             <div>
-              <div className="text-white text-[20px] tracking-wide uppercase">
+              <div className="text-white text-[16px] sm:text-[20px] tracking-wide uppercase font-medium">
                 SOCIAL
               </div>
-              <div className="mt-8 space-y-3 text-[18px]">
+              <div className="mt-6 sm:mt-8 space-y-2.5 sm:space-y-3 text-[15px] sm:text-[18px]">
                 <a
                   className="block text-white/55 hover:text-white/90 transition-colors duration-200"
                   href="https://www.behance.net/itsmkd"
@@ -139,10 +139,10 @@ export default function Footer() {
 
             {/* CONTACT */}
             <div>
-              <div className="text-white text-[20px] tracking-wide uppercase">
+              <div className="text-white text-[16px] sm:text-[20px] tracking-wide uppercase font-medium">
                 CONTACT
               </div>
-              <div className="mt-8 space-y-3 text-[18px]">
+              <div className="mt-6 sm:mt-8 space-y-2.5 sm:space-y-3 text-[15px] sm:text-[18px]">
                 <div className="text-white/55">contact@itsmkdcom</div>
                 <div className="text-white/55">Dhaka, Bangladesh</div>
               </div>

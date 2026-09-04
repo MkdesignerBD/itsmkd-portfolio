@@ -119,18 +119,18 @@ export default function TestimonialBrandsSection() {
       <div className="relative max-w-[1400px] mx-auto px-6 md:px-10 pt-16 pb-12">
         <p className="text-white/50 text-[16px]">Testimonial</p>
 
-        <h2 className="mt-6 text-white font-medium leading-[1.05] text-[42px] md:text-[54px]">
+        <h2 className="mt-6 text-white font-medium leading-[1.08] text-[28px] sm:text-[42px] md:text-[54px] tracking-tight">
           Good design speaks for itself.
         </h2>
 
-        <div className="mt-2 select-none pointer-events-none text-[42px] md:text-[54px] leading-[1.05] font-thin text-[#5C5C5C]">
+        <div className="mt-2 select-none pointer-events-none text-[28px] sm:text-[42px] md:text-[54px] leading-[1.08] font-thin text-[#5C5C5C] tracking-tight">
           Here’s what clients say about working with
-          <br />
+          <br className="hidden sm:block" />
           me.
         </div>
 
         <div
-          className="relative mt-16 md:mt-20 h-[210px] md:h-[190px]"
+          className="relative mt-12 md:mt-20 h-[170px] md:h-[190px] scale-[0.72] sm:scale-[0.88] md:scale-100 origin-center"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -200,15 +200,15 @@ export default function TestimonialBrandsSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="mx-auto max-w-[760px] rounded-[28px] border border-white/10 bg-white/[0.03] backdrop-blur-sm px-6 md:px-10 py-7 md:py-8 shadow-[0_20px_70px_rgba(0,0,0,0.35)]"
+            className="mx-auto max-w-[760px] rounded-[24px] sm:rounded-[28px] border border-white/10 bg-white/[0.03] backdrop-blur-sm px-5 sm:px-6 md:px-10 py-6 sm:py-7 md:py-8 shadow-[0_20px_70px_rgba(0,0,0,0.35)]"
           >
-            <div className="flex items-start gap-4">
-              <div className="text-white/20 text-[42px] leading-none font-serif">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="text-white/20 text-[32px] sm:text-[42px] leading-none font-serif">
                 “
               </div>
 
               <div className="flex-1">
-                <p className="text-center text-white text-[18px] md:text-[20px] leading-[1.7] font-normal">
+                <p className="text-center text-white text-[15px] sm:text-[18px] md:text-[20px] leading-[1.65] md:leading-[1.7] font-normal">
                   {active.quote}
                 </p>
               </div>

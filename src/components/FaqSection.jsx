@@ -50,24 +50,24 @@ export default function FaqSection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.07)_0%,rgba(11,11,11,0.92)_60%,rgba(11,11,11,1)_100%)]" />
       </div>
 
-      <div className="relative max-w-[1400px] mx-auto px-10 py-20">
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-10 py-16 md:py-20">
         {/* Label */}
-        <p className="text-white/45 text-[16px] tracking-wide uppercase">
+        <p className="text-white/45 text-[15px] md:text-[16px] tracking-wide uppercase">
           FAQS
         </p>
 
         {/* Heading */}
-        <h2 className="mt-8 leading-[1.05]">
-          <span className="block text-white text-[48px] md:text-[54px] font-medium">
+        <h2 className="mt-6 sm:mt-8 leading-[1.08]">
+          <span className="block text-white text-[28px] sm:text-[40px] md:text-[54px] font-medium tracking-tight">
             Before we get started,
           </span>
-          <span className="block text-[#5C5C5C] text-[48px] md:text-[54px] font-thin">
+          <span className="block text-[#5C5C5C] text-[28px] sm:text-[40px] md:text-[54px] font-thin tracking-tight">
             here are a few things you might want to know.
           </span>
         </h2>
 
         {/* Accordion */}
-        <div className="mt-14">
+        <div className="mt-10 md:mt-14">
           {faqs.map((item, idx) => {
             const open = openIdx === idx;
             return (
@@ -75,12 +75,14 @@ export default function FaqSection() {
                 <button
                   type="button"
                   onClick={() => setOpenIdx(open ? null : idx)}
-                  className="w-full py-10 flex items-center justify-between gap-6 text-left"
+                  className="w-full py-6 sm:py-10 flex items-center justify-between gap-4 sm:gap-6 text-left"
                 >
-                  <span className="text-white text-[28px] md:text-[34px] font-medium">
+                  <span className="text-white text-[19px] sm:text-[28px] md:text-[34px] font-medium">
                     {item.q}
                   </span>
-                  <PlusIcon open={open} />
+                  <div className="shrink-0">
+                    <PlusIcon open={open} />
+                  </div>
                 </button>
 
                 <AnimatePresence initial={false}>
@@ -92,7 +94,7 @@ export default function FaqSection() {
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-10 pr-14 text-white/70 text-[18px] leading-[1.6] max-w-[980px]">
+                      <div className="pb-8 sm:pb-10 pr-4 sm:pr-14 text-white/70 text-[15px] sm:text-[18px] leading-[1.6] max-w-[980px]">
                         {item.a}
                       </div>
                     </motion.div>

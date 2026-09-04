@@ -72,7 +72,7 @@ export default function About() {
             WHO IS MKD
           </p>
 
-          <h1 className="mt-4 md:mt-5 text-white font-medium text-[48px] sm:text-[56px] md:text-[64px] leading-[1.05] tracking-tight">
+          <h1 className="mt-4 md:mt-5 text-white font-medium text-[32px] sm:text-[56px] md:text-[64px] leading-[1.08] sm:leading-[1.05] tracking-tight">
             I think, therefore . . .
           </h1>
         </motion.div>
@@ -162,11 +162,11 @@ export default function About() {
             Experience
           </p>
 
-          <h2 className="mt-4 md:mt-5 leading-[1.05] tracking-tight">
-            <span className="block text-white text-[42px] sm:text-[54px] md:text-[64px] font-medium">
+          <h2 className="mt-4 md:mt-5 leading-[1.08] tracking-tight">
+            <span className="block text-white text-[28px] sm:text-[42px] md:text-[64px] font-medium">
               Experience isn’t just about time —
             </span>
-            <span className="block text-[#5C5C5C] text-[42px] sm:text-[54px] md:text-[64px] font-thin">
+            <span className="block text-[#5C5C5C] text-[28px] sm:text-[42px] md:text-[64px] font-thin">
               it’s about what you learn along the way.
             </span>
           </h2>

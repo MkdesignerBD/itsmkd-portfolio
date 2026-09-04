@@ -87,11 +87,11 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="max-w-[840px]"
         >
-          <h1 className="leading-[1.05] tracking-tight">
-            <span className="block text-[40px] sm:text-[50px] md:text-[58px] font-medium text-white">
+          <h1 className="leading-[1.08] tracking-tight">
+            <span className="block text-[28px] sm:text-[50px] md:text-[58px] font-medium text-white">
               Not sure where to start?
             </span>
-            <span className="block text-[40px] sm:text-[50px] md:text-[58px] font-thin text-[#666666] mt-1">
+            <span className="block text-[28px] sm:text-[50px] md:text-[58px] font-thin text-[#666666] mt-1">
               A message is a good first step.
             </span>
           </h1>
@@ -250,7 +250,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={loading}
-                className="h-[56px] px-10 rounded-xl border border-white/30 text-white hover:border-[#ED502C] hover:bg-[#ED502C] transition-all cursor-pointer font-medium text-[16px] disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto h-[56px] px-10 rounded-xl border border-white/30 text-white hover:border-[#ED502C] hover:bg-[#ED502C] transition-all cursor-pointer font-medium text-[16px] disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>

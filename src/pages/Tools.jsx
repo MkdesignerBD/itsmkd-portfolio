@@ -638,10 +638,66 @@ export default function Tools() {
   const [trxId, setTrxId] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [copiedNumber, setCopiedNumber] = useState(false);
 
   // Prices
   const priceUSD = "2.99";
   const priceBDT = 299;
+
+  // Feedback Form State
+  const [feedbackCategory, setFeedbackCategory] = useState("Feature Request");
+  const [feedbackRating, setFeedbackRating] = useState(5);
+  const [feedbackName, setFeedbackName] = useState("");
+  const [feedbackEmail, setFeedbackEmail] = useState("");
+  const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
+  const [feedbackLoading, setFeedbackLoading] = useState(false);
+
+  // Auto-scroll to #feedback or #pricing if present in URL
+  useEffect(() => {
+    const handleHashScroll = () => {
+      if (window.location.hash === "#feedback" || window.location.pathname.includes("feedback")) {
+        setTimeout(() => {
+          const el = document.getElementById("feedback");
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }, 350);
+      } else if (window.location.hash === "#pricing") {
+        setTimeout(() => {
+          const el = document.getElementById("pricing");
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }, 350);
+      }
+    };
+    handleHashScroll();
+  }, []);
+
+  const handleFeedbackSubmit = async (e) => {
+    e.preventDefault();
+    if (!feedbackMessage.trim()) {
+      alert("অনুগ্রহ করে আপনার মতামত বা ফিডব্যাক লিখুন!");
+      return;
+    }
+    setFeedbackLoading(true);
+    try {
+      await fetch("https://formspree.io/f/xreyaqzo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          source: "MKD Grid System Tools Feedback",
+          rating: feedbackRating,
+          category: feedbackCategory,
+          name: feedbackName || "Anonymous Designer",
+          email: feedbackEmail || "Not provided",
+          message: feedbackMessage,
+        }),
+      });
+    } catch (err) {
+      // Fail gracefully
+    } finally {
+      setFeedbackLoading(false);
+      setFeedbackSubmitted(true);
+    }
+  };
 
   // 6 Key Features with Clean Minimal Stroke Vector Icons
   const features = [
@@ -804,7 +860,7 @@ export default function Tools() {
   };
 
   return (
-    <div className="bg-[#161616] text-white min-h-screen pt-28 pb-20 overflow-hidden relative selection:bg-[#f15a28]/30 selection:text-white">
+    <div className="bg-[#161616] text-white min-h-screen pb-20 overflow-hidden relative selection:bg-[#f15a28]/30 selection:text-white">
       {/* Background Ambient Animated Glows */}
       <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-[#f15a28]/15 via-orange-500/5 to-transparent blur-[120px] rounded-full" />
       <div className="pointer-events-none absolute top-[800px] -left-40 w-[500px] h-[500px] bg-rose-500/10 blur-[140px] rounded-full" />
@@ -813,107 +869,34 @@ export default function Tools() {
       {/* =================================================================
           1. HERO BANNER
           ================================================================= */}
-      <section className="max-w-[1300px] mx-auto px-6 md:px-10 pt-8 pb-20 relative z-10">
-        <div className="text-center max-w-[900px] mx-auto">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-gradient-to-r from-[#f15a28]/20 to-amber-500/20 border border-[#f15a28]/35 text-[#f15a28] text-xs font-semibold uppercase tracking-wider mb-6 shadow-[0_0_20px_rgba(241,90,40,0.2)]"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f15a28] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#f15a28]"></span>
+      <section className="relative max-w-[1366px] mx-auto px-6 md:px-[98px] pt-28 md:pt-[130px] pb-16 md:pb-24 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-[920px]"
+        >
+          <p className="text-[#888888] text-[15px] font-normal tracking-wide">
+            Tools &amp; Extension
+          </p>
+
+          <h1 className="mt-4 tracking-tight leading-[1.12]">
+            <span className="block text-white text-[26px] sm:text-[36px] md:text-[46px] lg:text-[54px] font-medium">
+              The Ultimate Logo Grid System
             </span>
-            Adobe Illustrator Extension • Version 1.0 Pro
-          </motion.div>
-
-          {/* Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-[64px] font-medium leading-[1.08] tracking-tight text-white mb-6"
-          >
-            The Ultimate Logo Grid System for{" "}
-            <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-[#f15a28] to-amber-300">
-              Adobe Illustrator
-              <motion.span
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ duration: 0.9, delay: 0.7 }}
-                className="absolute left-0 -bottom-1 h-[3px] bg-gradient-to-r from-[#f15a28] to-amber-400 rounded-full"
-              />
+            <span className="block text-[#666666] text-[22px] sm:text-[30px] md:text-[40px] lg:text-[48px] font-thin mt-1 sm:mt-1.5 tracking-normal">
+              for Adobe Illustrator.
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-lg md:text-xl text-white/70 leading-relaxed max-w-[760px] mx-auto mb-10"
-          >
-            Say goodbye to tedious manual gridding. Generate flawless logo construction
-            circles, Golden Ratio matrices, and isometric guides in 1-click directly inside
-            Illustrator.
-          </motion.p>
+          <p className="mt-8 text-white text-[16px] sm:text-[18px] font-medium tracking-tight">
+            Say goodbye to tedious manual gridding.
+          </p>
 
-          {/* Action Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex flex-wrap items-center justify-center gap-4 mb-8"
-          >
-            <motion.button
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() => {
-                setShowCheckoutModal(true);
-                setIsSubmitted(false);
-              }}
-              className="px-9 py-4 rounded-xl bg-gradient-to-r from-[#f15a28] to-[#e04a18] text-white font-semibold transition-all shadow-[0_10px_35px_rgba(241,90,40,0.4)] cursor-pointer text-base flex items-center gap-3 relative overflow-hidden group"
-            >
-              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
-              <span>Get Lifetime Access — $2.99 / ৳299</span>
-              <span className="text-xs bg-black/30 px-2 py-0.5 rounded-md uppercase font-bold tracking-wider">
-                50% OFF
-              </span>
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.03, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => {
-                alert("Free 3-Day Trial download started! (Includes Install_Mac.command & Install_Win.bat)");
-              }}
-              className="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-medium transition cursor-pointer text-base flex items-center gap-2 backdrop-blur-md"
-            >
-              <span>Download 3-Day Free Trial</span>
-              <span className="animate-bounce text-orange-400">↓</span>
-            </motion.button>
-          </motion.div>
-
-          {/* Payment Badges - Clean & Minimal */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="flex flex-wrap items-center justify-center gap-2 text-xs sm:text-[13px] text-white/50"
-          >
-            <span>Supported Payments:</span>
-            <span className="text-white/80 font-medium">bKash</span>
-            <span>·</span>
-            <span className="text-white/80 font-medium">Nagad</span>
-            <span>·</span>
-            <span className="text-white/80 font-medium">Cards</span>
-            <span>·</span>
-            <span className="text-white/80 font-medium">PayPal</span>
-            <span>·</span>
-            <span className="text-white/80 font-medium">Stripe</span>
-          </motion.div>
-        </div>
+          <p className="mt-3 text-[#a6a6a6] text-[15px] sm:text-[16px] leading-[1.75] max-w-[700px] font-normal">
+            Generate flawless logo construction circles, Golden Ratio matrices, and isometric guides in 1-click directly inside Illustrator.
+          </p>
+        </motion.div>
 
         {/* =================================================================
             LIVE INTERACTIVE 3-IN-1 TOOL PANEL (Base | Construction | Clearspace)
@@ -922,7 +905,7 @@ export default function Tools() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
-          className="mt-16 max-w-[1050px] mx-auto rounded-[28px] bg-[#141414]/90 backdrop-blur-xl border border-white/15 p-4 md:p-6 shadow-[0_30px_90px_rgba(0,0,0,0.8)] relative"
+          className="mt-14 md:mt-16 w-full rounded-[28px] bg-[#141414]/90 backdrop-blur-xl border border-white/15 p-4 md:p-6 shadow-[0_30px_90px_rgba(0,0,0,0.8)] relative"
         >
           {/* Interactive Tool Component */}
           <InteractiveGridGenerator />
@@ -950,10 +933,15 @@ export default function Tools() {
         </motion.div>
       </section>
 
+      {/* Section Divider 1: Scroll-driven animated line */}
+      <div className="max-w-[1366px] mx-auto px-6 md:px-[98px] relative z-10">
+        <GlobalScrollDivider scrollYProgress={scrollYProgress} />
+      </div>
+
       {/* =================================================================
           2. KEY FEATURES GRID WITH MINIMAL VECTOR STROKE ICONS
           ================================================================= */}
-      <section className="max-w-[1300px] mx-auto px-6 md:px-10 py-16 border-t border-white/10 relative z-10">
+      <section className="max-w-[1366px] mx-auto px-6 md:px-[98px] pt-16 md:pt-24 pb-16 md:pb-24 relative z-10">
         <div className="text-center max-w-[650px] mx-auto mb-16">
           <span className="text-[#f15a28] text-xs font-semibold uppercase tracking-widest block mb-2">
             Why Designers Love It
@@ -1012,10 +1000,15 @@ export default function Tools() {
         </div>
       </section>
 
+      {/* Section Divider 2: Scroll-driven animated line */}
+      <div className="max-w-[1366px] mx-auto px-6 md:px-[98px] relative z-10">
+        <GlobalScrollDivider scrollYProgress={scrollYProgress} />
+      </div>
+
       {/* =================================================================
           3. PRICING & PURCHASE SECTION (DUAL CURRENCY: USD / BDT)
           ================================================================= */}
-      <section className="max-w-[1100px] mx-auto px-6 md:px-10 py-20 border-t border-white/10 relative z-10">
+      <section id="pricing" className="max-w-[1366px] mx-auto px-6 md:px-[98px] pt-16 md:pt-24 pb-16 md:pb-24 relative z-10">
         <div className="text-center max-w-[650px] mx-auto mb-10">
           <span className="text-[#f15a28] text-xs font-semibold uppercase tracking-widest block mb-2">
             Pricing &amp; Licensing
@@ -1089,14 +1082,15 @@ export default function Tools() {
               </ul>
             </div>
 
-            <motion.button
+            <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => alert("Free trial installer package downloading! (Includes Install_Mac.command & Install_Win.bat)")}
-              className="mt-8 w-full py-3.5 rounded-xl border border-white/30 hover:border-white/60 text-white font-medium transition cursor-pointer"
+              href="/downloads/MKD_Grid_System_Beta_Trial_v1.0.zip"
+              download="MKD_Grid_System_Beta_Trial_v1.0.zip"
+              className="mt-8 w-full py-3.5 rounded-xl border border-white/30 hover:border-white/60 text-white font-medium transition cursor-pointer flex items-center justify-center text-center"
             >
               Download Free Trial
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* Option 2: Lifetime Pro License */}
@@ -1104,8 +1098,8 @@ export default function Tools() {
             whileHover={{ y: -4, scale: 1.01 }}
             className="rounded-3xl bg-gradient-to-b from-[#181818] to-[#121212] border-2 border-[#f15a28] p-8 flex flex-col justify-between relative shadow-[0_20px_60px_rgba(241,90,40,0.25)]"
           >
-            <div className="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-[#f15a28] text-white text-xs font-bold uppercase tracking-wider shadow-lg animate-pulse">
-              Most Popular
+            <div className="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-white/10 border border-white/20 text-white/80 text-xs font-bold uppercase tracking-wider shadow-lg">
+              Coming Soon
             </div>
 
             <div>
@@ -1148,28 +1142,29 @@ export default function Tools() {
               </ul>
             </div>
 
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => {
-                setShowCheckoutModal(true);
-                setIsSubmitted(false);
-              }}
-              className="mt-8 w-full py-4 rounded-xl bg-gradient-to-r from-[#f15a28] to-[#e04a18] text-white font-bold transition shadow-lg cursor-pointer flex items-center justify-center gap-2 group"
+            <button
+              type="button"
+              disabled
+              className="mt-8 w-full py-4 rounded-xl bg-white/[0.06] border border-white/15 text-white/50 font-semibold flex items-center justify-center gap-2 cursor-not-allowed select-none text-center"
             >
+              <span className="w-2 h-2 rounded-full bg-[#f15a28] animate-pulse"></span>
               <span>
-                {currency === "USD" ? "Buy Lifetime License ($2.99)" : "বিকাশ / নগদে কিনুন (৳299)"}
+                {currency === "USD" ? "Coming Soon • Payment Gateway in Setup" : "শীঘ্রই আসছে • পেমেন্ট গেটওয়ে সেটআপ চলছে"}
               </span>
-              <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-            </motion.button>
+            </button>
           </motion.div>
         </div>
       </section>
 
+      {/* Section Divider 3: Scroll-driven animated line */}
+      <div className="max-w-[1366px] mx-auto px-6 md:px-[98px] relative z-10">
+        <GlobalScrollDivider scrollYProgress={scrollYProgress} />
+      </div>
+
       {/* =================================================================
           4. ANIMATED ACCORDION FAQS
           ================================================================= */}
-      <section className="max-w-[1000px] mx-auto px-6 md:px-10 py-16 border-t border-white/10 relative z-10">
+      <section className="max-w-[1366px] mx-auto px-6 md:px-[98px] pt-16 md:pt-24 pb-16 md:pb-24 relative z-10">
         <div className="text-center max-w-[650px] mx-auto mb-12">
           <span className="text-[#f15a28] text-xs font-semibold uppercase tracking-widest block mb-2">
             Got Questions?
@@ -1220,8 +1215,180 @@ export default function Tools() {
         </div>
       </section>
 
+      {/* Section Divider 4: Scroll-driven animated line before Feedback */}
+      <div className="max-w-[1366px] mx-auto px-6 md:px-[98px] relative z-10">
+        <GlobalScrollDivider scrollYProgress={scrollYProgress} />
+      </div>
+
+      {/* =================================================================
+          5. USER FEEDBACK & SUGGESTIONS SECTION
+          ================================================================= */}
+      <section id="feedback" className="max-w-[1366px] mx-auto px-6 md:px-[98px] pt-16 md:pt-24 pb-16 md:pb-24 relative z-10">
+        <div className="max-w-[920px] mb-10 md:mb-12">
+          <p className="text-[#888888] text-[15px] md:text-[16px] font-normal tracking-wide">
+            User Feedback
+          </p>
+
+          <h2 className="mt-4 sm:mt-6 leading-[1.08] tracking-tight">
+            <span className="block text-white text-[28px] sm:text-[40px] md:text-[54px] font-medium tracking-tight">
+              Help us shape the next release.
+            </span>
+            <span className="block text-[#5C5C5C] text-[28px] sm:text-[40px] md:text-[54px] font-thin tracking-tight mt-1">
+              Your feedback directly guides updates &amp; new tools.
+            </span>
+          </h2>
+
+          <p className="mt-6 text-[#a6a6a6] text-[15px] sm:text-[16px] leading-[1.75] max-w-[720px] font-normal">
+            Whether you&apos;re exploring the grid tools or using MKD Grid System on client projects, let us know what worked well or what features you&apos;d like to see next.
+          </p>
+        </div>
+
+        {/* Minimal Feedback Form Card (Full-width consistency matching interactive hero card) */}
+        <div className="w-full rounded-[28px] bg-[#141414] border border-white/10 p-6 sm:p-10 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.6)] relative">
+          {feedbackSubmitted ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-center py-10"
+            >
+              <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                ✓
+              </div>
+              <h3 className="text-xl font-semibold text-white">Thank You for Your Feedback!</h3>
+              <p className="text-sm text-white/60 mt-2 max-w-md mx-auto leading-relaxed">
+                Your suggestions have been recorded and help us optimize future grid matrices and features for Adobe Illustrator.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setFeedbackSubmitted(false);
+                  setFeedbackMessage("");
+                }}
+                className="mt-6 px-6 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-medium transition cursor-pointer"
+              >
+                Submit Another Response
+              </button>
+            </motion.div>
+          ) : (
+            <form onSubmit={handleFeedbackSubmit} className="space-y-6">
+              {/* Row 1: Rating & Feedback Category */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+                {/* Rating */}
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-white/70 mb-2.5">
+                    Your Overall Rating
+                  </label>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <button
+                        key={star}
+                        type="button"
+                        onClick={() => setFeedbackRating(star)}
+                        className={`text-2xl sm:text-3xl transition-transform hover:scale-110 cursor-pointer ${
+                          star <= feedbackRating ? "text-[#f15a28]" : "text-white/20"
+                        }`}
+                        title={`${star} Star`}
+                      >
+                        ★
+                      </button>
+                    ))}
+                    <span className="text-xs text-white/50 ml-2 font-medium">
+                      {feedbackRating === 5 && "5/5 — Flawless"}
+                      {feedbackRating === 4 && "4/5 — Very Good"}
+                      {feedbackRating === 3 && "3/5 — Good"}
+                      {feedbackRating === 2 && "2/5 — Needs Work"}
+                      {feedbackRating === 1 && "1/5 — Not Satisfied"}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Feedback Category Pills */}
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-white/70 mb-2.5">
+                    Feedback Type
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {["Feature Request", "Bug Report", "Tool Performance", "General Review"].map((cat) => (
+                      <button
+                        key={cat}
+                        type="button"
+                        onClick={() => setFeedbackCategory(cat)}
+                        className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition cursor-pointer ${
+                          feedbackCategory === cat
+                            ? "bg-[#f15a28] text-white shadow-sm font-semibold"
+                            : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white border border-white/5"
+                        }`}
+                      >
+                        {cat}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 2: Name & Email */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div>
+                  <label className="block text-xs text-white/60 mb-2">Your Name (Optional)</label>
+                  <input
+                    type="text"
+                    value={feedbackName}
+                    onChange={(e) => setFeedbackName(e.target.value)}
+                    placeholder="e.g. Alex Rivera"
+                    className="w-full h-12 rounded-xl bg-white/[0.04] border border-white/10 px-4 text-white text-sm outline-none placeholder:text-white/25 focus:border-[#f15a28] focus:ring-1 focus:ring-[#f15a28] transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs text-white/60 mb-2">Your Email (Optional)</label>
+                  <input
+                    type="email"
+                    value={feedbackEmail}
+                    onChange={(e) => setFeedbackEmail(e.target.value)}
+                    placeholder="alex@designer.com"
+                    className="w-full h-12 rounded-xl bg-white/[0.04] border border-white/10 px-4 text-white text-sm outline-none placeholder:text-white/25 focus:border-[#f15a28] focus:ring-1 focus:ring-[#f15a28] transition-colors"
+                  />
+                </div>
+              </div>
+
+              {/* Row 3: Message */}
+              <div>
+                <label className="block text-xs text-white/60 mb-2">
+                  Your Suggestions / Experience <span className="text-[#f15a28]">*</span>
+                </label>
+                <textarea
+                  rows={4}
+                  value={feedbackMessage}
+                  onChange={(e) => setFeedbackMessage(e.target.value)}
+                  placeholder="Tell us what you liked, issues you encountered, or what new tools you'd like to see next in Illustrator..."
+                  className="w-full rounded-xl bg-white/[0.04] border border-white/10 p-4 text-white text-sm outline-none placeholder:text-white/25 focus:border-[#f15a28] focus:ring-1 focus:ring-[#f15a28] transition-colors resize-none leading-relaxed"
+                  required
+                />
+              </div>
+
+              {/* Row 4: Submit Button */}
+              <div className="pt-2 flex items-center justify-end">
+                <button
+                  type="submit"
+                  disabled={feedbackLoading}
+                  className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#f15a28] to-[#e04a18] text-white font-semibold transition-all shadow-[0_10px_25px_rgba(241,90,40,0.3)] hover:shadow-[0_15px_35px_rgba(241,90,40,0.4)] cursor-pointer text-sm flex items-center gap-2"
+                >
+                  {feedbackLoading ? (
+                    <span>Submitting...</span>
+                  ) : (
+                    <>
+                      <span>Send Feedback</span>
+                      <span>&rarr;</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
+          )}
+        </div>
+      </section>
+
       {/* Section Divider: Scroll-driven animated line before Footer */}
-      <div className="max-w-[1366px] mx-auto px-6 md:px-[98px] mt-24 md:mt-32 pb-6 md:pb-10 relative z-10">
+      <div className="max-w-[1366px] mx-auto px-6 md:px-[98px] pb-16 md:pb-20 relative z-10">
         <GlobalScrollDivider scrollYProgress={scrollYProgress} />
       </div>
 
@@ -1236,44 +1403,49 @@ export default function Tools() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/92 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md overflow-y-auto overflow-x-hidden p-4 sm:p-6 flex items-center justify-center w-full"
             onClick={() => setShowCheckoutModal(false)}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              initial={{ scale: 0.95, opacity: 0, y: 16 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              exit={{ scale: 0.95, opacity: 0, y: 16 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-lg w-full bg-[#161616] border border-white/15 rounded-3xl p-6 md:p-8 shadow-2xl relative my-8"
+              className="relative w-full max-w-[340px] sm:max-w-[420px] min-w-0 bg-[#131313] border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-[0_30px_90px_rgba(0,0,0,0.85)] my-auto text-white box-border mx-auto"
             >
               {/* Close Button */}
               <button
+                type="button"
                 onClick={() => setShowCheckoutModal(false)}
-                className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-sm cursor-pointer z-10"
+                className="absolute top-3.5 right-3.5 w-7 h-7 rounded-full bg-white/[0.04] hover:bg-white/10 border border-white/5 flex items-center justify-center text-white/60 hover:text-white text-xs transition cursor-pointer z-10"
+                aria-label="Close modal"
               >
                 ✕
               </button>
 
-              <div className="text-center mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-[#f15a28]/20 text-[#f15a28] flex items-center justify-center text-2xl mx-auto mb-3 font-bold">
-                  ⚡
+              {/* Header */}
+              <div className="text-center mb-4 sm:mb-5 px-2">
+                <div className="w-9 h-9 rounded-xl bg-[#f15a28]/10 border border-[#f15a28]/25 text-[#f15a28] flex items-center justify-center mx-auto mb-2">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white">Choose Payment Method</h3>
-                <p className="text-xs text-white/60 mt-1">
+                <h3 className="text-base sm:text-lg font-semibold text-white tracking-tight">Choose Payment Method</h3>
+                <p className="text-[11px] sm:text-xs text-white/50 mt-0.5">
                   MKD Grid System for Illustrator • Lifetime License
                 </p>
               </div>
 
               {/* Payment Method Switcher Tabs */}
-              <div className="grid grid-cols-2 gap-2 bg-[#202020] p-1.5 rounded-2xl border border-white/10 mb-6">
+              <div className="grid grid-cols-2 gap-1 bg-white/[0.03] p-1 rounded-xl border border-white/5 mb-4 sm:mb-5">
                 <button
                   type="button"
                   onClick={() => setPaymentTab("bkash")}
-                  className={`py-2.5 px-3 rounded-xl text-xs md:text-sm font-bold flex items-center justify-center gap-2 transition cursor-pointer ${
+                  className={`py-2 px-2 rounded-lg text-[11px] sm:text-xs font-medium flex items-center justify-center gap-1 transition cursor-pointer ${
                     paymentTab === "bkash"
-                      ? "bg-[#e2136e] text-white shadow-md"
-                      : "text-white/60 hover:text-white"
+                      ? "bg-white/10 text-white border border-white/10 shadow-sm font-semibold"
+                      : "text-white/50 hover:text-white/80"
                   }`}
                 >
                   <span>🇧🇩 bKash / Nagad</span>
@@ -1282,60 +1454,68 @@ export default function Tools() {
                 <button
                   type="button"
                   onClick={() => setPaymentTab("international")}
-                  className={`py-2.5 px-3 rounded-xl text-xs md:text-sm font-bold flex items-center justify-center gap-2 transition cursor-pointer ${
+                  className={`py-2 px-2 rounded-lg text-[11px] sm:text-xs font-medium flex items-center justify-center gap-1 transition cursor-pointer ${
                     paymentTab === "international"
-                      ? "bg-[#f15a28] text-white shadow-md"
-                      : "text-white/60 hover:text-white"
+                      ? "bg-white/10 text-white border border-white/10 shadow-sm font-semibold"
+                      : "text-white/50 hover:text-white/80"
                   }`}
                 >
-                  <span>🌍 Card / PayPal / Stripe</span>
+                  <span>🌍 Card / PayPal</span>
                 </button>
               </div>
 
               {/* BKASH / NAGAD PAYMENT TAB */}
               {paymentTab === "bkash" && (
-                <div>
+                <div className="min-w-0">
                   {!isSubmitted ? (
-                    <form onSubmit={handleBkashSubmit} className="space-y-4">
+                    <form onSubmit={handleBkashSubmit} className="space-y-3 sm:space-y-3.5">
                       {/* Price Banner */}
-                      <div className="bg-gradient-to-r from-[#e2136e]/20 to-orange-500/20 border border-[#e2136e]/30 rounded-2xl p-4 flex items-center justify-between">
+                      <div className="bg-white/[0.03] border border-white/10 rounded-xl p-3 sm:p-3.5 flex items-center justify-between gap-2">
                         <div>
-                          <div className="text-xs text-white/70">টোটাল পেমেন্ট অ্যামাউন্ট</div>
-                          <div className="text-xl font-bold text-white mt-0.5">৳ ২৯৯ BDT</div>
+                          <div className="text-[10px] sm:text-[11px] text-white/50 font-medium">টোটাল পেমেন্ট অ্যামাউন্ট</div>
+                          <div className="flex items-baseline gap-1.5 sm:gap-2 mt-0.5">
+                            <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">৳২৯৯</span>
+                            <span className="text-[11px] sm:text-xs text-white/50 font-medium">BDT</span>
+                            <span className="text-[11px] sm:text-xs text-white/35 line-through">৳১,২০০</span>
+                          </div>
                         </div>
-                        <span className="text-xs bg-[#e2136e] text-white px-2.5 py-1 rounded-full font-bold">
-                          50% ডিসকাউন্ট
-                        </span>
+                        <div className="text-right shrink-0">
+                          <span className="inline-flex items-center px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                            ৭৫% ছাড় (75% OFF)
+                          </span>
+                        </div>
                       </div>
 
                       {/* Instructions Box */}
-                      <div className="bg-[#1e1e1e] p-4 rounded-2xl border border-white/10 text-xs space-y-2.5 text-white/80">
-                        <div className="font-semibold text-white text-sm flex items-center gap-2">
-                          <span>📱 পেমেন্ট নির্দেশনা:</span>
+                      <div className="bg-white/[0.02] p-3.5 rounded-xl border border-white/5 text-xs space-y-2 text-white/75 min-w-0">
+                        <div className="text-[11px] sm:text-[12px] font-medium text-white/90 flex items-center justify-between gap-2">
+                          <span>১. বিকাশ বা নগদ থেকে <strong>Send Money</strong> করুন:</span>
+                          <span className="text-[10px] text-white/40 bg-white/5 px-2 py-0.5 rounded-md shrink-0">Personal</span>
                         </div>
-                        <p>
-                          ১. আপনার বিকাশ বা নগদ অ্যাপ থেকে <strong>Send Money</strong> করুন:
-                        </p>
-                        <div className="p-2.5 bg-black/50 rounded-xl border border-white/10 flex items-center justify-between font-mono text-sm text-[#f15a28] font-bold">
-                          <span>01700-000000</span>
+
+                        <div className="p-2.5 bg-black/50 rounded-xl border border-white/10 flex items-center justify-between font-mono text-xs sm:text-sm text-white">
+                          <span className="tracking-wider text-[#f15a28] font-bold">01700-000000</span>
                           <button
                             type="button"
                             onClick={() => {
                               navigator.clipboard.writeText("01700000000");
-                              alert("নম্বর কপি করা হয়েছে!");
+                              setCopiedNumber(true);
+                              setTimeout(() => setCopiedNumber(false), 2000);
                             }}
-                            className="text-xs bg-white/10 hover:bg-white/20 text-white px-2 py-1 rounded font-sans cursor-pointer"
+                            className={`text-xs px-2.5 py-1 rounded-lg font-sans cursor-pointer transition shrink-0 ${
+                              copiedNumber
+                                ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                                : "bg-white/10 hover:bg-white/20 text-white"
+                            }`}
                           >
-                            Copy
+                            {copiedNumber ? "✓ Copied" : "Copy"}
                           </button>
                         </div>
-                        <p className="text-[11px] text-white/60">
-                          (নম্বরটি আপনার পার্সোনাল/মার্চেন্ট নম্বর দিয়ে রিপ্লেস করে নিন)
-                        </p>
-                        <p>
+
+                        <p className="text-[11px] text-white/60 leading-relaxed">
                           ২. রেফারেন্সে আপনার নাম বা ইমেইল লিখুন।
                         </p>
-                        <p>
+                        <p className="text-[11px] text-white/60 leading-relaxed">
                           ৩. নিচের ফর্মে আপনার <strong>TrxID</strong> এবং <strong>Email</strong> দিয়ে সাবমিট করুন।
                         </p>
                       </div>
@@ -1343,7 +1523,7 @@ export default function Tools() {
                       {/* Input fields */}
                       <div className="space-y-3">
                         <div>
-                          <label className="block text-xs font-semibold text-white/75 mb-1.5">
+                          <label className="block text-[11px] font-medium text-white/70 mb-1">
                             আপনার ইমেইল অ্যাড্রেস (যেখানে লাইসেন্স key ও ফাইল যাবে) *
                           </label>
                           <input
@@ -1352,12 +1532,12 @@ export default function Tools() {
                             placeholder="yourname@gmail.com"
                             value={userEmail}
                             onChange={(e) => setUserEmail(e.target.value)}
-                            className="w-full bg-[#111] border border-white/15 focus:border-[#e2136e] rounded-xl px-4 py-3 text-sm text-white outline-none transition"
+                            className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-[#f15a28] focus:bg-white/[0.05] rounded-xl px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 outline-none transition"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-white/75 mb-1.5">
+                          <label className="block text-[11px] font-medium text-white/70 mb-1">
                             bKash / Nagad Transaction ID (TrxID) *
                           </label>
                           <input
@@ -1366,16 +1546,16 @@ export default function Tools() {
                             placeholder="e.g. 9J8A7K2XYZ"
                             value={trxId}
                             onChange={(e) => setTrxId(e.target.value)}
-                            className="w-full bg-[#111] border border-white/15 focus:border-[#e2136e] rounded-xl px-4 py-3 text-sm text-white font-mono uppercase outline-none transition"
+                            className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-[#f15a28] focus:bg-white/[0.05] rounded-xl px-3.5 py-2.5 text-sm text-white font-mono uppercase placeholder:text-white/30 outline-none transition"
                           />
                         </div>
                       </div>
 
                       <motion.button
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
+                        whileHover={{ scale: 1.01 }}
+                        whileTap={{ scale: 0.99 }}
                         type="submit"
-                        className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#e2136e] to-[#f7941d] hover:opacity-95 text-white font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-lg mt-4 text-sm"
+                        className="w-full py-3 px-4 rounded-xl bg-[#f15a28] hover:bg-[#d94a1d] text-white font-semibold transition flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_20px_rgba(241,90,40,0.25)] text-xs sm:text-sm mt-3 sm:mt-4 text-center"
                       >
                         <span>অর্ডার কনফার্ম করুন &amp; ফাইল ডাউনলোড করুন &rarr;</span>
                       </motion.button>
@@ -1383,32 +1563,34 @@ export default function Tools() {
                   ) : (
                     /* Success / Instant Download State */
                     <motion.div
-                      initial={{ scale: 0.9, opacity: 0 }}
+                      initial={{ scale: 0.95, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
-                      className="text-center py-4 space-y-4"
+                      className="text-center py-3 space-y-4"
                     >
-                      <div className="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center text-3xl mx-auto">
+                      <div className="w-12 h-12 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full flex items-center justify-center text-xl mx-auto font-bold">
                         ✓
                       </div>
-                      <h4 className="text-xl font-bold text-white">ধন্যবাদ! পেমেন্ট রিকোয়েস্ট গৃহীত হয়েছে</h4>
-                      <p className="text-xs text-white/70 max-w-sm mx-auto leading-relaxed">
-                        আপনার TrxID (<span className="font-mono text-[#f15a28] font-bold">{trxId}</span>) এবং ইমেইল (<span className="text-white font-semibold">{userEmail}</span>) রেকর্ড করা হয়েছে।
-                      </p>
+                      <div>
+                        <h4 className="text-base font-semibold text-white">ধন্যবাদ! পেমেন্ট রিকোয়েস্ট গৃহীত হয়েছে</h4>
+                        <p className="text-xs text-white/60 max-w-sm mx-auto mt-1 leading-relaxed">
+                          আপনার TrxID (<span className="font-mono text-[#f15a28] font-bold">{trxId}</span>) এবং ইমেইল (<span className="text-white font-semibold">{userEmail}</span>) রেকর্ড করা হয়েছে।
+                        </p>
+                      </div>
 
-                      <div className="bg-[#202020] p-4 rounded-2xl border border-white/10 text-left space-y-2 text-xs">
-                        <div className="text-white font-bold text-sm">আপনার লাইসেন্স কী:</div>
-                        <div className="p-2.5 bg-black/60 font-mono text-emerald-400 font-bold rounded-lg select-all">
+                      <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/10 text-left space-y-1.5 text-xs">
+                        <div className="text-white/60 text-[11px] font-medium">আপনার লাইসেন্স কী:</div>
+                        <div className="p-2.5 bg-black/60 font-mono text-emerald-400 font-semibold rounded-lg select-all text-xs tracking-wider">
                           MKD-PRO-GRID-2026-X892-LIFETIME
                         </div>
                       </div>
 
-                      <a
-                        href="/downloads/MKD_Grid_System_Pro_v1.0.zip"
-                        download="MKD_Grid_System_Pro_v1.0.zip"
-                        className="w-full py-3.5 rounded-xl bg-[#f15a28] hover:bg-[#d94a1d] text-white font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-lg block text-sm"
+                      <button
+                        type="button"
+                        disabled
+                        className="w-full py-3.5 rounded-xl bg-white/10 text-white/50 font-semibold flex items-center justify-center gap-2 cursor-not-allowed select-none text-sm"
                       >
-                        <span>📥 সরাসরি ZIP ফাইল ডাউনলোড করুন</span>
-                      </a>
+                        <span>পেমেন্ট গেটওয়ে চালুর পর ফাইল অ্যাক্টিভ হবে</span>
+                      </button>
                     </motion.div>
                   )}
                 </div>
@@ -1416,34 +1598,42 @@ export default function Tools() {
 
               {/* INTERNATIONAL PAYMENT TAB */}
               {paymentTab === "international" && (
-                <div className="space-y-4">
-                  <div className="bg-[#202020] p-4 rounded-2xl border border-white/5 flex justify-between items-center">
+                <div className="space-y-4 min-w-0">
+                  <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-3.5 sm:p-4 flex items-center justify-between gap-2">
                     <div>
-                      <div className="text-sm font-semibold text-white">Lifetime Pro License</div>
-                      <div className="text-xs text-white/50">Instant ZIP Download + Key</div>
+                      <div className="text-[10px] sm:text-[11px] text-white/50 font-medium">Lifetime Pro License</div>
+                      <div className="flex items-baseline gap-1.5 sm:gap-2 mt-0.5">
+                        <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">$2.99</span>
+                        <span className="text-[11px] sm:text-xs text-white/50 font-medium">USD</span>
+                        <span className="text-[11px] sm:text-xs text-white/35 line-through">$9.99</span>
+                      </div>
                     </div>
-                    <div className="text-xl font-bold text-[#f15a28]">$2.99 USD</div>
+                    <div className="text-right shrink-0">
+                      <span className="inline-flex items-center px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                        70% OFF
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-2.5 pt-1">
                     <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
                       onClick={() => {
                         alert("Redirecting to secure Credit Card / Stripe checkout...");
                       }}
-                      className="w-full py-3.5 rounded-xl bg-[#f15a28] hover:bg-[#d94a1d] text-white font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-lg text-sm"
+                      className="w-full py-3 rounded-xl bg-white text-black hover:bg-white/90 font-semibold transition flex items-center justify-center gap-2 cursor-pointer text-xs sm:text-sm shadow-sm"
                     >
                       <span>Pay with Credit / Debit Card (Stripe)</span>
                     </motion.button>
 
                     <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
                       onClick={() => {
                         alert("Redirecting to PayPal / Gumroad checkout...");
                       }}
-                      className="w-full py-3.5 rounded-xl bg-[#ffc439] hover:bg-[#f4b82d] text-black font-bold transition flex items-center justify-center gap-2 cursor-pointer text-sm"
+                      className="w-full py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white font-medium transition flex items-center justify-center gap-2 cursor-pointer text-xs sm:text-sm"
                     >
                       <span>Pay with PayPal / Gumroad</span>
                     </motion.button>
@@ -1451,8 +1641,13 @@ export default function Tools() {
                 </div>
               )}
 
-              <div className="mt-6 text-center text-[11px] text-white/40">
-                🔒 256-bit Secure Encryption • 14-Day Money Back Guarantee
+              {/* Footer Trust Note */}
+              <div className="mt-4 sm:mt-5 text-center text-[10px] sm:text-[11px] text-white/40 flex flex-wrap items-center justify-center gap-1.5">
+                <svg className="w-3.5 h-3.5 text-white/40 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>256-bit Secure Encryption • 14-Day Money Back Guarantee</span>
               </div>
             </motion.div>
           </motion.div>

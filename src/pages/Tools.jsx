@@ -679,23 +679,33 @@ export default function Tools() {
     }
     setFeedbackLoading(true);
     try {
-      await fetch("https://formspree.io/f/xreyaqzo", {
+      const payload = {
+        source: "MKD Grid System Tools Feedback",
+        rating: `${feedbackRating}/5 Stars`,
+        category: feedbackCategory,
+        name: feedbackName.trim() || "Designer",
+        message: feedbackMessage.trim(),
+      };
+      if (feedbackEmail.trim()) {
+        payload.email = feedbackEmail.trim();
+      }
+
+      const res = await fetch("https://formspree.io/f/xreyaqzo", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          source: "MKD Grid System Tools Feedback",
-          rating: feedbackRating,
-          category: feedbackCategory,
-          name: feedbackName || "Anonymous Designer",
-          email: feedbackEmail || "Not provided",
-          message: feedbackMessage,
-        }),
+        body: JSON.stringify(payload),
       });
+
+      const data = await res.json();
+      if (res.ok) {
+        setFeedbackSubmitted(true);
+      } else {
+        alert(data.error || (data.errors && data.errors[0] ? data.errors[0].message : "ফিডব্যাক পাঠাতে সমস্যা হয়েছে।"));
+      }
     } catch (err) {
-      // Fail gracefully
+      alert("ইন্টারনেট কানেকশন চেক করে পুনরায় চেষ্টা করুন।");
     } finally {
       setFeedbackLoading(false);
-      setFeedbackSubmitted(true);
     }
   };
 
@@ -1339,9 +1349,12 @@ export default function Tools() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-white/60 mb-2">Your Email (Optional)</label>
+                  <label className="block text-xs text-white/60 mb-2">
+                    Your Email <span className="text-[#f15a28]">*</span>
+                  </label>
                   <input
                     type="email"
+                    required
                     value={feedbackEmail}
                     onChange={(e) => setFeedbackEmail(e.target.value)}
                     placeholder="alex@designer.com"

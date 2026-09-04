@@ -165,6 +165,8 @@ export default function TestimonialBrandsSection() {
                       <img
                         src={a.src}
                         alt={a.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -227,6 +229,8 @@ export default function TestimonialBrandsSection() {
                   <img
                     src={b.src}
                     alt={b.alt}
+                    loading="lazy"
+                    decoding="async"
                     className="h-12 w-auto opacity-95"
                   />
                 </div>

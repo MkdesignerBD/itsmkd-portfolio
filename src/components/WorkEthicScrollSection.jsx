@@ -65,6 +65,8 @@ export default function WorkEthicScrollSection({ children }) {
                   <img
                     src={s.img}
                     alt={s.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>

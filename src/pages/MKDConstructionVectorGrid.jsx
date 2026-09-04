@@ -1,0 +1,512 @@
+import React from "react";
+import { motion } from "framer-motion";
+
+export function MKDConstructionVectorGrid() {
+  return (
+    <motion.g
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.35 }}
+    >
+      
+
+
+
+
+	<g id="_x5B_GRID_x5D__Construction">
+	<g id="Construction_System">
+		<g id="GRP_x5F_OUTLINES">
+			
+				<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"opacity":"0.85","fill":"none","stroke":"#8C96A5","strokeWidth":"0.6","strokeMiterlimit":"10"}} cx="947.632" cy="451.664" r="90.181"/>
+			
+				<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"opacity":"0.85","fill":"none","stroke":"#8C96A5","strokeWidth":"0.6","strokeMiterlimit":"10"}} cx="947.843" cy="616.381" r="90.009"/>
+			
+				<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"opacity":"0.85","fill":"none","stroke":"#8C96A5","strokeWidth":"0.6","strokeMiterlimit":"10"}} cx="1114.631" cy="598.29" r="80.47"/>
+			
+				<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"opacity":"0.85","fill":"none","stroke":"#8C96A5","strokeWidth":"0.6","strokeMiterlimit":"10"}} cx="804.357" cy="480.78" r="79.59"/>
+			
+				<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"opacity":"0.85","fill":"none","stroke":"#8C96A5","strokeWidth":"0.6","strokeMiterlimit":"10"}} cx="947.635" cy="616.381" r="51.829"/>
+			
+				<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"opacity":"0.85","fill":"none","stroke":"#8C96A5","strokeWidth":"0.6","strokeMiterlimit":"10"}} cx="947.656" cy="451.669" r="51.816"/>
+			
+				<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"opacity":"0.85","fill":"none","stroke":"#8C96A5","strokeWidth":"0.6","strokeMiterlimit":"10"}} cx="1148.905" cy="447.207" r="46.017"/>
+			
+				<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"opacity":"0.85","fill":"none","stroke":"#8C96A5","strokeWidth":"0.6","strokeMiterlimit":"10"}} cx="1114.631" cy="598.319" r="42.11"/>
+			
+				<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"opacity":"0.85","fill":"none","stroke":"#8C96A5","strokeWidth":"0.6","strokeMiterlimit":"10"}} cx="804.283" cy="480.78" r="41.293"/>
+		</g>
+		<g id="GRP_x5F_EDGERAYS">
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="1156.91" y1="749.82" x2="1156.444" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="439.542" x2="1266.089" y2="439.542"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="1103.4" y1="749.82" x2="1103.109" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="640.429" x2="1266.089" y2="640.429"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="1195.257" y1="749.82" x2="1194.792" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="678.772" x2="1266.089" y2="678.772"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="1065.051" y1="749.82" x2="1064.755" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="401.19" x2="1266.089" y2="401.19"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="818.163" y1="749.82" x2="1165.062" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="1037.814" y1="749.82" x2="1037.814" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="999.467" y1="749.82" x2="999.467" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="1266.089" y1="663.285" x2="653.911" y2="468.573"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="952.046" y1="749.82" x2="952.046" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="913.698" y1="749.82" x2="913.698" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="768.439" y1="749.82" x2="1115.298" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="883.947" y1="749.82" x2="883.947" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="845.599" y1="749.82" x2="845.599" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="823.53" y1="749.82" x2="823.53" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="785.183" y1="749.82" x2="785.183" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="763.258" y1="749.82" x2="763.258" y2="330.18"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.75","fill":"none","stroke":"#AFB4BE","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="724.911" y1="749.82" x2="724.911" y2="330.18"/>
+		</g>
+		<g id="GRP_x5F_GRIDLINES">
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="724.767" y1="330.18" x2="724.767" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="762.99" y1="330.18" x2="762.99" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="776.79" y1="330.18" x2="776.79" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="804.357" y1="330.18" x2="804.357" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="823.53" y1="330.18" x2="823.53" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="845.576" y1="330.18" x2="845.576" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="857.451" y1="330.18" x2="857.451" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="883.946" y1="330.18" x2="883.946" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="895.806" y1="330.18" x2="895.806" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="913.698" y1="330.18" x2="913.698" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="952.046" y1="330.18" x2="952.046" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="987.589" y1="330.18" x2="987.589" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="999.464" y1="330.18" x2="999.464" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="1017.145" y1="330.18" x2="1017.145" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="1034.162" y1="330.18" x2="1034.162" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="1064.805" y1="330.18" x2="1064.805" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="1102.888" y1="330.18" x2="1102.888" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="1148.905" y1="330.18" x2="1148.905" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="1194.922" y1="330.18" x2="1194.922" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="706.389" x2="1266.089" y2="706.389"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="678.82" x2="1266.089" y2="678.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="640.429" x2="1266.089" y2="640.429"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="616.381" x2="1266.089" y2="616.381"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="598.319" x2="1266.089" y2="598.319"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="566.994" x2="1266.089" y2="566.994"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="541.846" x2="1266.089" y2="541.846"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="526.372" x2="1266.089" y2="526.372"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="509.114" x2="1266.089" y2="509.114"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="493.224" x2="1266.089" y2="493.224"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="480.78" x2="1266.089" y2="480.78"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="451.669" x2="1266.089" y2="451.669"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="439.542" x2="1266.089" y2="439.542"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="401.19" x2="1266.089" y2="401.19"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.7","fill":"none","stroke":"#B4B9C3","strokeWidth":"0.5","strokeMiterlimit":"10"}} x1="653.911" y1="361.483" x2="1266.089" y2="361.483"/>
+		</g>
+		<g id="GRP_x5F_CENTERLINES">
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.6","fill":"none","stroke":"#A0A5AF","strokeWidth":"0.5","strokeMiterlimit":"10","strokeDasharray":"4,4"}} x1="960" y1="330.18" x2="960" y2="749.82"/>
+			
+				<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"opacity":"0.6","fill":"none","stroke":"#A0A5AF","strokeWidth":"0.5","strokeMiterlimit":"10","strokeDasharray":"4,4"}} x1="653.911" y1="540" x2="1266.089" y2="540"/>
+		</g>
+		<g id="GRP_x5F_DIMENSIONS">
+			<g id="Arrow_Dim_38.8X">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="724.911" y1="318.18" x2="1195.089" y2="318.18"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="728.411,316.08 724.911,318.18 
+					728.411,320.28 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1191.589,316.08 1195.089,318.18 
+					1191.589,320.28 				"/>
+				<text transform="matrix(1 0 0 1 954 319.2242)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"8px"}}>38.8X</text>
+			</g>
+			<g id="Arrow_Dim_2.5x">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="639.911" y1="678.82" x2="639.911" y2="706.389"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,682.32 639.911,678.82 
+					642.011,682.32 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,702.889 639.911,706.389 
+					642.011,702.889 				"/>
+				<text transform="matrix(1 0 0 1 645.9106 699.6485)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>2.5x</text>
+			</g>
+			<g id="Arrow_Dim_3x">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="639.911" y1="640.429" x2="639.911" y2="678.82"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,643.929 639.911,640.429 
+					642.011,643.929 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,675.32 639.911,678.82 
+					642.011,675.32 				"/>
+				<text transform="matrix(1 0 0 1 645.9106 666.6684)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>3x</text>
+			</g>
+			<g id="Arrow_Dim_2x">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="639.911" y1="616.381" x2="639.911" y2="640.429"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,619.881 639.911,616.381 
+					642.011,619.881 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,636.929 639.911,640.429 
+					642.011,636.929 				"/>
+				<text transform="matrix(1 0 0 1 645.9106 635.4488)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>2x</text>
+			</g>
+			<g id="Arrow_Dim_1.5x">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="639.911" y1="598.319" x2="639.911" y2="616.381"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,601.819 639.911,598.319 
+					642.011,601.819 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,612.881 639.911,616.381 
+					642.011,612.881 				"/>
+				<text transform="matrix(1 0 0 1 645.9106 614.3936)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>1.5x</text>
+			</g>
+			<g id="Arrow_Dim_2.5x_00000009568326227849347290000014177719451012938668_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="639.911" y1="566.994" x2="639.911" y2="598.319"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,570.494 639.911,566.994 
+					642.011,570.494 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,594.819 639.911,598.319 
+					642.011,594.819 				"/>
+				<text transform="matrix(1 0 0 1 645.9106 589.7003)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>2.5x</text>
+			</g>
+			<g id="Arrow_Dim_2x_00000036212883346191112220000017299278568247683462_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="639.911" y1="541.846" x2="639.911" y2="566.994"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,545.346 639.911,541.846 
+					642.011,545.346 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,563.494 639.911,566.994 
+					642.011,563.494 				"/>
+				<text transform="matrix(1 0 0 1 645.9106 561.4637)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>2x</text>
+			</g>
+			<g id="Arrow_Dim_1.5x_00000155861983696444756110000014315477568159210392_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="639.911" y1="526.372" x2="639.911" y2="541.846"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,529.872 639.911,526.372 
+					642.011,529.872 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,538.346 639.911,541.846 
+					642.011,538.346 				"/>
+				<text transform="matrix(1 0 0 1 645.9106 541.1526)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>1.5x</text>
+			</g>
+			<g id="Arrow_Dim_1.5x_00000008150518252424753040000012810081513644735902_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="639.911" y1="509.114" x2="639.911" y2="526.372"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,512.614 639.911,509.114 
+					642.011,512.614 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,522.872 639.911,526.372 
+					642.011,522.872 				"/>
+				<text transform="matrix(1 0 0 1 645.9106 524.7867)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>1.5x</text>
+			</g>
+			<g id="Arrow_Dim_1.5x_00000065787656184166726980000002756025174349786248_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="639.911" y1="493.224" x2="639.911" y2="509.114"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,496.724 639.911,493.224 
+					642.011,496.724 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,505.614 639.911,509.114 
+					642.011,505.614 				"/>
+				<text transform="matrix(1 0 0 1 645.9106 508.2127)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>1.5x</text>
+			</g>
+			<g id="Arrow_Dim_2.5x_00000098903132129782966080000008631801851511079359_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="639.911" y1="451.669" x2="639.911" y2="480.78"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,455.169 639.911,451.669 
+					642.011,455.169 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,477.28 639.911,480.78 
+					642.011,477.28 				"/>
+				<text transform="matrix(1 0 0 1 645.9106 473.2684)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>2.5x</text>
+			</g>
+			<g id="Arrow_Dim_3x_00000138551587824494415450000003184155937879038121_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="639.911" y1="401.19" x2="639.911" y2="439.542"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,404.69 639.911,401.19 
+					642.011,404.69 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,436.042 639.911,439.542 
+					642.011,436.042 				"/>
+				<text transform="matrix(1 0 0 1 645.9106 427.41)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>3x</text>
+			</g>
+			<g id="Arrow_Dim_3.5x">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="639.911" y1="361.483" x2="639.911" y2="401.19"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,364.983 639.911,361.483 
+					642.011,364.983 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="637.811,397.69 639.911,401.19 
+					642.011,397.69 				"/>
+				<text transform="matrix(1 0 0 1 645.9106 388.3805)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>3.5x</text>
+			</g>
+			<g id="Arrow_Dim_2.5x_00000145042681226894625830000011195344524774010539_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="1280.089" y1="678.82" x2="1280.089" y2="706.389"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,682.32 1280.089,678.82 
+					1282.189,682.32 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,702.889 
+					1280.089,706.389 1282.189,702.889 				"/>
+				
+					<text transform="matrix(1 0 0 1 1286.0894 699.6485)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>2.5x</text>
+			</g>
+			<g id="Arrow_Dim_3x_00000150816671687094293370000002018672983773474464_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="1280.089" y1="640.429" x2="1280.089" y2="678.82"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,643.929 
+					1280.089,640.429 1282.189,643.929 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,675.32 1280.089,678.82 
+					1282.189,675.32 				"/>
+				
+					<text transform="matrix(1 0 0 1 1286.0894 666.6684)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>3x</text>
+			</g>
+			<g id="Arrow_Dim_2x_00000041276325710326395680000006470436918028181125_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="1280.089" y1="616.381" x2="1280.089" y2="640.429"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,619.881 
+					1280.089,616.381 1282.189,619.881 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,636.929 
+					1280.089,640.429 1282.189,636.929 				"/>
+				
+					<text transform="matrix(1 0 0 1 1286.0894 635.4488)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>2x</text>
+			</g>
+			<g id="Arrow_Dim_1.5x_00000016777544519088900080000017979987061100264859_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="1280.089" y1="598.319" x2="1280.089" y2="616.381"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,601.819 
+					1280.089,598.319 1282.189,601.819 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,612.881 
+					1280.089,616.381 1282.189,612.881 				"/>
+				
+					<text transform="matrix(1 0 0 1 1286.0894 614.3936)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>1.5x</text>
+			</g>
+			<g id="Arrow_Dim_2.5x_00000044877358064910899220000007059872549580926635_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="1280.089" y1="566.994" x2="1280.089" y2="598.319"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,570.494 
+					1280.089,566.994 1282.189,570.494 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,594.819 
+					1280.089,598.319 1282.189,594.819 				"/>
+				
+					<text transform="matrix(1 0 0 1 1286.0894 589.7003)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>2.5x</text>
+			</g>
+			<g id="Arrow_Dim_2x_00000093137551355953197290000008889942976090834836_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="1280.089" y1="541.846" x2="1280.089" y2="566.994"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,545.346 
+					1280.089,541.846 1282.189,545.346 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,563.494 
+					1280.089,566.994 1282.189,563.494 				"/>
+				
+					<text transform="matrix(1 0 0 1 1286.0894 561.4637)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>2x</text>
+			</g>
+			<g id="Arrow_Dim_1.5x_00000016788317474998251870000016528959618615618485_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="1280.089" y1="526.372" x2="1280.089" y2="541.846"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,529.872 
+					1280.089,526.372 1282.189,529.872 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,538.346 
+					1280.089,541.846 1282.189,538.346 				"/>
+				
+					<text transform="matrix(1 0 0 1 1286.0894 541.1526)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>1.5x</text>
+			</g>
+			<g id="Arrow_Dim_1.5x_00000160882151151986735560000014330620285931315598_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="1280.089" y1="509.114" x2="1280.089" y2="526.372"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,512.614 
+					1280.089,509.114 1282.189,512.614 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,522.872 
+					1280.089,526.372 1282.189,522.872 				"/>
+				
+					<text transform="matrix(1 0 0 1 1286.0894 524.7867)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>1.5x</text>
+			</g>
+			<g id="Arrow_Dim_1.5x_00000110454156033062700330000014752728767356922246_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="1280.089" y1="493.224" x2="1280.089" y2="509.114"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,496.724 
+					1280.089,493.224 1282.189,496.724 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,505.614 
+					1280.089,509.114 1282.189,505.614 				"/>
+				
+					<text transform="matrix(1 0 0 1 1286.0894 508.2127)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>1.5x</text>
+			</g>
+			<g id="Arrow_Dim_2.5x_00000062880706573853611240000006278263583347849889_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="1280.089" y1="451.669" x2="1280.089" y2="480.78"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,455.169 
+					1280.089,451.669 1282.189,455.169 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,477.28 1280.089,480.78 
+					1282.189,477.28 				"/>
+				
+					<text transform="matrix(1 0 0 1 1286.0894 473.2684)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>2.5x</text>
+			</g>
+			<g id="Arrow_Dim_3x_00000072999950261091686170000015879949471817381552_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="1280.089" y1="401.19" x2="1280.089" y2="439.542"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,404.69 1280.089,401.19 
+					1282.189,404.69 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,436.042 
+					1280.089,439.542 1282.189,436.042 				"/>
+				<text transform="matrix(1 0 0 1 1286.0894 427.41)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>3x</text>
+			</g>
+			<g id="Arrow_Dim_3.5x_00000014624937318589473310000005673156167321566141_">
+				
+					<motion.line initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} x1="1280.089" y1="361.483" x2="1280.089" y2="401.19"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,364.983 
+					1280.089,361.483 1282.189,364.983 				"/>
+				<motion.polyline initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, ease: "easeInOut" }} style={{"fill":"none","stroke":"#828791","strokeWidth":"0.45","strokeMiterlimit":"10"}} points="1277.989,397.69 1280.089,401.19 
+					1282.189,397.69 				"/>
+				
+					<text transform="matrix(1 0 0 1 1286.0894 388.3805)" style={{"fill":"#828791","fontFamily":"'MyriadPro-Regular'","fontSize":"7.5px"}}>3.5x</text>
+			</g>
+		</g>
+		<g id="GRP_x5F_ANCHORS">
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1156.742" cy="598.319" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1156.574" cy="447.231" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1148.91" cy="439.542" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1103.185" cy="439.542" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1103.324" cy="640.429" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1114.631" cy="640.429" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1194.922" cy="447.202" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1195.089" cy="598.29" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1114.631" cy="678.772" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1065.001" cy="678.772" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1064.805" cy="401.19" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1148.905" cy="401.19" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1194.922" cy="447.207" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1037.814" cy="451.664" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1017.145" cy="509.114" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="992.914" cy="538.425" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1037.814" cy="616.381" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1037.814" cy="678.815" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="999.467" cy="678.815" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="999.467" cy="616.381" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="963.348" cy="566.994" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="952.046" cy="563.399" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="952.046" cy="678.82" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="913.698" cy="678.82" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="913.698" cy="401.18" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="952.046" cy="401.18" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="952.046" cy="523.154" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="955.013" cy="524.098" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="987.589" cy="484.686" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="999.472" cy="451.669" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="999.472" cy="401.18" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1037.819" cy="401.18" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="1037.819" cy="451.669" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="883.947" cy="480.78" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="883.947" cy="678.82" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="845.599" cy="678.82" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="845.599" cy="480.78" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="823.53" cy="444.273" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="823.53" cy="678.815" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="785.183" cy="678.815" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="785.183" cy="447.931" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="776.79" cy="439.537" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="763.258" cy="439.537" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="763.258" cy="678.82" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="724.911" cy="678.82" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="724.911" cy="401.19" r="1.5"/>
+			<motion.circle initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.65, ease: "easeInOut" }} style={{"fill":"#FFFFFF","stroke":"#3C4048","strokeWidth":"0.7","strokeMiterlimit":"10"}} cx="804.357" cy="401.19" r="1.5"/>
+		</g>
+		<g id="GRP_x5F_HANDLES" style={{"display":"none"}}>
+		</g>
+	</g>
+</g>
+<g id="_x5B_GRID_x5F_TEMPLATE_x5F_CORNER_x5D_" style={{"display":"none"}}>
+	<g id="Template_x5F_Corner_x5F_Vector" style={{"display":"inline"}}>
+		<g id="Main_logo2_00000042733745933693216900000018046469825639939200_">
+			<g>
+				<path style={{"fill":"#5A5F69"}} d="M2586.255,133.264v331.555h-64.201V133.264c0-26.49-14.998-49.546-36.947-61.118V464.81h-64.201
+					V78.269c0-7.745-6.299-14.052-14.052-14.052H2384.2v400.602H2320V0.016h133.007
+					C2526.476,0.016,2586.255,59.794,2586.255,133.264z"/>
+			</g>
+			<g>
+				<path style={{"fill":"#5A5F69"}} d="M2843.857,84.52c0,35.021-12.286,69.176-34.604,96.18l-40.567,49.073
+					c45.943,26.563,75.17,75.66,75.17,130.511V464.81h-64.2V360.284c0-37.95-24.3-71.174-60.469-82.682l-18.923-6.019v193.235h-64.2
+					V0h64.2v204.205l4.967,1.581l54.539-65.982c12.832-15.52,19.894-35.149,19.894-55.276V0h64.2v84.528L2843.857,84.52z"/>
+			</g>
+			<g>
+				<path style={{"fill":"#5A5F69"}} d="M3106.883,77.049l0.281,252.949c0,74.312-60.428,134.74-134.701,134.74h-83.091l-0.328-464.722
+					h140.799c42.476,0,77.041,34.555,77.041,77.04V77.049z M3042.963,330.045l-0.281-252.949c0-7.11-5.754-12.872-12.831-12.872
+					H2953.3l0.233,336.321h18.93C3011.336,400.546,3042.963,368.919,3042.963,330.045z"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="Layer_1">
+	<g id="Main_logo_00000055694725510338865030000010406539862246734489_" style={{"opacity":"0.85"}}>
+		<g style={{"opacity":"0.85"}}>
+			<path style={{"opacity":"0.85","fill":"#C8CDD7","stroke":"#3C414B","strokeMiterlimit":"10"}} d="M883.947,480.78v198.04h-38.348V480.78
+				c0-15.823-8.959-29.594-22.069-36.506v234.542h-38.348V447.931c0-4.626-3.763-8.393-8.393-8.393h-13.532V678.82h-38.347V401.19
+				h79.446C848.24,401.19,883.947,436.896,883.947,480.78z"/>
+		</g>
+		<g style={{"opacity":"0.85"}}>
+			<path style={{"opacity":"0.85","fill":"#C8CDD7","stroke":"#3C414B","strokeMiterlimit":"10"}} d="M1037.814,451.664
+				c0,20.919-7.339,41.319-20.669,57.449l-24.231,29.312c27.442,15.866,44.9,45.192,44.9,77.955v62.434h-38.347v-62.434
+				c0-22.668-14.515-42.513-36.118-49.387l-11.303-3.595V678.82h-38.347V401.18h38.347v121.973l2.967,0.944l32.576-39.412
+				c7.665-9.27,11.883-20.995,11.883-33.017V401.18h38.347v50.489L1037.814,451.664z"/>
+		</g>
+		<g style={{"opacity":"0.85"}}>
+			<path style={{"opacity":"0.85","fill":"#C8CDD7","stroke":"#3C414B","strokeMiterlimit":"10"}} d="M1194.922,447.202l0.167,151.089
+				c0,44.387-36.094,80.482-80.458,80.482h-49.631l-0.196-277.582h84.1c25.371,0,46.017,20.64,46.017,46.017V447.202z
+				 M1156.742,598.319l-0.168-151.088c0-4.247-3.437-7.689-7.664-7.689h-45.725l0.139,200.887h11.307
+				C1137.851,640.429,1156.742,621.538,1156.742,598.319z"/>
+		</g>
+	</g>
+	<g id="Main_logo2" style={{"display":"none"}}>
+		<g style={{"display":"inline"}}>
+			<path style={{"fill":"#F15A29"}} d="M883.947,480.78v198.04h-38.348V480.78c0-15.823-8.959-29.594-22.069-36.506v234.542h-38.348
+				V447.931c0-4.626-3.763-8.393-8.393-8.393h-13.532V678.82h-38.347V401.19h79.446C848.24,401.19,883.947,436.896,883.947,480.78z"
+				/>
+		</g>
+		<g style={{"display":"inline"}}>
+			<path style={{"fill":"#F15A29"}} d="M1037.814,451.664c0,20.919-7.339,41.319-20.669,57.449l-24.231,29.312
+				c27.442,15.866,44.9,45.192,44.9,77.955v62.434h-38.347v-62.434c0-22.668-14.515-42.513-36.118-49.387l-11.303-3.595V678.82
+				h-38.347V401.18h38.347v121.973l2.967,0.944l32.576-39.412c7.665-9.27,11.883-20.995,11.883-33.017V401.18h38.347v50.489
+				L1037.814,451.664z"/>
+		</g>
+		<g style={{"display":"inline"}}>
+			<path style={{"fill":"#F15A29"}} d="M1194.922,447.202l0.167,151.089c0,44.387-36.094,80.482-80.458,80.482h-49.631l-0.196-277.582
+				h84.1c25.371,0,46.017,20.64,46.017,46.017V447.202z M1156.742,598.319l-0.168-151.088c0-4.247-3.437-7.689-7.664-7.689h-45.725
+				l0.139,200.887h11.307C1137.851,640.429,1156.742,621.538,1156.742,598.319z"/>
+		</g>
+	</g>
+</g>
+
+    </motion.g>
+  );
+}

@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Infinite brand marquee */
+@keyframes brand-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-marquee {
+  overflow: hidden;
+}
+
+.brand-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: brand-marquee 18s linear infinite;
+}
+
+.brand-marquee:hover .brand-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Snap only inside the Work Ethic section (no nested scroll) */
+.workethic-snap {
+  scroll-snap-type: y mandatory;
+}
+
+/* Optional: nicer snapping */
+.workethic-snap > * {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .workethic-snap {
+    scroll-snap-type: none;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+@keyframes workethicIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0) scale(0.992);
+    filter: blur(1px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}

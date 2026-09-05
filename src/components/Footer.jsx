@@ -5,6 +5,10 @@ export default function Footer() {
   const location = useLocation();
   const isDark = location.pathname === "/about" || location.pathname === "/work";
 
+  const handleNavClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className={`relative ${isDark ? "bg-[#161616]" : "bg-[#0b0b0b]"} overflow-hidden`}>
       {/* subtle vignette like other dark sections */}
@@ -51,7 +55,7 @@ export default function Footer() {
                     <Link
                       key={item.to}
                       to={item.to}
-                      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                      onClick={() => handleNavClick(item.to)}
                       className={`block transition-colors ${
                         isActive
                           ? "text-white font-medium"
@@ -73,14 +77,14 @@ export default function Footer() {
               <div className="mt-6 sm:mt-8 space-y-2.5 sm:space-y-3 text-[15px] sm:text-[18px]">
                 <Link
                   to="/terms"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  onClick={() => handleNavClick("/terms")}
                   className="block text-white/55 hover:text-white/90 transition-colors"
                 >
                   Terms &amp; Conditions
                 </Link>
                 <Link
                   to="/privacy"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  onClick={() => handleNavClick("/privacy")}
                   className="block text-white/55 hover:text-white/90 transition-colors"
                 >
                   Privacy Policy

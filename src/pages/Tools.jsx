@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import SEO from "../components/SEO";
 import toolIcon from "../assets/tools/icon46.png";
 import clearspaceBaseImg from "../assets/tools/Clearspace.png";
 import { MKDConstructionVectorGrid } from "./MKDConstructionVectorGrid";
@@ -625,6 +626,77 @@ function InteractiveGridGenerator() {
   );
 }
 
+const toolsSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://itsmkd.com/tools/#software",
+      "name": "MKD Grid System",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Windows 10/11, macOS (Intel & Apple Silicon)",
+      "softwareRequirements": "Adobe Illustrator CC 2018 - 2026",
+      "softwareVersion": "1.0.0",
+      "description": "Precision Logo Construction and Grid System Extension for Adobe Illustrator. Generate isometric matrices, circular gridding, and clearspace rules in 1-click.",
+      "url": "https://itsmkd.com/tools",
+      "image": "https://itsmkd.com/logo.png",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free Trial",
+          "price": "0.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://itsmkd.com/tools"
+        },
+        {
+          "@type": "Offer",
+          "name": "Lifetime Pro License",
+          "price": "2.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://itsmkd.com/tools"
+        }
+      ],
+      "creator": {
+        "@type": "Person",
+        "name": "Mofijul Islam (MKD)",
+        "url": "https://itsmkd.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://itsmkd.com/tools/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which versions of Adobe Illustrator are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MKD Grid System officially supports Adobe Illustrator CC 2018 through the latest 2026 release on both Windows and macOS (Intel & Apple Silicon M1/M2/M3/M4)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the Free Trial work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Free Trial allows you to download and test all core logo construction features, Base Grids, and Golden Ratio matrices directly inside Illustrator without any time limit or credit card required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it a subscription or a one-time purchase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MKD Grid System Pro is a lifetime one-time purchase with free future updates and zero recurring monthly fees."
+          }
+        }
+      ]
+    }
+  ]
+};
+
 export default function Tools() {
   const { scrollYProgress } = useScroll();
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
@@ -871,6 +943,13 @@ export default function Tools() {
 
   return (
     <div className="bg-[#161616] text-white min-h-screen pb-20 overflow-hidden relative selection:bg-[#f15a28]/30 selection:text-white">
+      <SEO
+        title="MKD Grid System — Precision Logo Grid Extension for Adobe Illustrator"
+        description="Generate Golden Ratio matrices, circular construction grids, and clearspace guides in 1-click inside Adobe Illustrator CC 2018-2026. Download free trial."
+        keywords="Adobe Illustrator Grid Extension, Logo Grid System, Golden Ratio Grid Illustrator, Clearspace Grid Generator, Logo Construction Tool, Illustrator CEP Extension, MKD Grid System"
+        canonical="/tools"
+        schema={toolsSchema}
+      />
       {/* Background Ambient Animated Glows */}
       <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-[#f15a28]/15 via-orange-500/5 to-transparent blur-[120px] rounded-full" />
       <div className="pointer-events-none absolute top-[800px] -left-40 w-[500px] h-[500px] bg-rose-500/10 blur-[140px] rounded-full" />

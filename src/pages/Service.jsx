@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
+import SEO from "../components/SEO";
 import BackToTop from "../components/BackToTop";
 
 // Reusable scroll-driven animated divider line (matching About page)
@@ -111,11 +112,66 @@ const advantages = [
   },
 ];
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://itsmkd.com/service/#service",
+      "name": "MKD E-Commerce Design Services",
+      "url": "https://itsmkd.com/service",
+      "description": "Professional Amazon Listing Image Design, A+ EBC Content, Brand Storefronts, and 3D Product Mockups by Mofijul Islam (MKD).",
+      "provider": {
+        "@type": "Person",
+        "name": "Mofijul Islam (MKD)",
+        "url": "https://itsmkd.com"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "E-Commerce Creative Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Amazon Listing Image Design",
+              "description": "Research-backed 6 to 7 image listing stack engineered around buyer psychology and conversion rate optimization."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Amazon A+ Content (EBC)",
+              "description": "Premium brand story modules, comparison charts, and editorial desktop/mobile layouts for Amazon sellers."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "3D Product Rendering & Modeling",
+              "description": "Photorealistic 3D product CAD renders, exploded mechanical views, and studio lighting mockups."
+            }
+          }
+        ]
+      }
+    }
+  ]
+};
+
 export default function Service() {
   const { scrollYProgress } = useScroll();
 
   return (
     <div className="bg-[#161616] text-white min-h-screen selection:bg-[#ED502C]/30 selection:text-white">
+      <SEO
+        title="Services — Amazon Listing Design, EBC A+ Content & 3D Mockups | MKD"
+        description="Comprehensive creative services for global e-commerce brands: Amazon listing image sets, A+ EBC modules, storefront branding, and photorealistic 3D product mockups."
+        keywords="Hire Amazon Designer, Amazon EBC Design Services, 3D Product Rendering Service, Amazon Listing Optimization, MKD Services"
+        canonical="/service"
+        schema={serviceSchema}
+      />
       {/* 1. Hero / Header Section */}
       <section className="relative max-w-[1366px] mx-auto px-6 md:px-[98px] pt-28 md:pt-[130px]">
         <motion.div

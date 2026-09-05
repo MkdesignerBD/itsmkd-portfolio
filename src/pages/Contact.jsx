@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import SEO from "../components/SEO";
 import mofijulProfile from "../assets/about/mofijul-profile.jpg";
 import BackToTop from "../components/BackToTop";
 
@@ -18,6 +19,25 @@ function GlobalScrollDivider({ scrollYProgress }) {
     </div>
   );
 }
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://itsmkd.com/contact/#contact",
+      "url": "https://itsmkd.com/contact",
+      "name": "Contact MKD — Start Your Design Project",
+      "description": "Send a direct message or project brief to Mofijul Islam (MKD) for Amazon listing graphics, EBC, 3D modeling, or MKD Grid System inquiries.",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Mofijul Islam",
+        "email": "contact@itsmkd.com",
+        "jobTitle": "Product Visuals Designer & Amazon Specialist"
+      }
+    }
+  ]
+};
 
 export default function Contact() {
   const { scrollYProgress } = useScroll();
@@ -79,6 +99,13 @@ export default function Contact() {
 
   return (
     <div className="bg-[#161616] text-white min-h-screen selection:bg-[#ED502C]/30 selection:text-white">
+      <SEO
+        title="Contact MKD — Start Your E-Commerce Design Project"
+        description="Get in touch with Mofijul Islam (MKD) for high-converting Amazon listing graphics, 3D product modeling, or inquiries regarding the MKD Grid System tool."
+        keywords="Contact MKD, Hire Amazon Designer, Get Design Quote, Contact Mofijul Islam"
+        canonical="/contact"
+        schema={contactSchema}
+      />
       {/* 1. Header Section */}
       <section className="relative max-w-[1366px] mx-auto px-6 md:px-[98px] pt-28 md:pt-[130px]">
         <motion.div

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import SEO from "../components/SEO";
 import BackToTop from "../components/BackToTop";
 
 import amazonHero from "../assets/work/amazon-hero.png";
@@ -168,6 +169,24 @@ const slideVariants = {
   }),
 };
 
+const workSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://itsmkd.com/work/#collection",
+      "url": "https://itsmkd.com/work",
+      "name": "MKD Portfolio & Design Case Studies",
+      "description": "Comprehensive portfolio of Amazon Listing Image Sets, A+ EBC Modules, and Conversion Graphics by Mofijul Islam (MKD).",
+      "creator": {
+        "@type": "Person",
+        "name": "Mofijul Islam (MKD)",
+        "url": "https://itsmkd.com"
+      }
+    }
+  ]
+};
+
 export default function Work() {
   const { scrollYProgress } = useScroll();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -241,6 +260,13 @@ export default function Work() {
 
   return (
     <div className="bg-[#161616] text-white min-h-screen selection:bg-[#ED502C]/30 selection:text-white">
+      <SEO
+        title="Portfolio & Case Studies — Amazon Visuals & Packaging | MKD"
+        description="Explore Amazon listing image case studies, conversion-driven A+ content sets, and custom packaging designs created by Mofijul Islam (MKD)."
+        keywords="Amazon Listing Case Studies, EBC Design Examples, Amazon Infographics Portfolio, Packaging Design Showcase, MKD Work"
+        canonical="/work"
+        schema={workSchema}
+      />
       {/* Category Mode Switcher: Ultra-minimal & compact */}
       <div className="pt-28 md:pt-32 pb-4 flex justify-center px-4">
         <div className="inline-flex items-center p-1 rounded-full bg-[#1e1e1e] border border-white/10 shadow-sm">

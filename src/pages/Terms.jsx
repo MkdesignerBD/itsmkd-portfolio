@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
+import SEO from "../components/SEO";
 import BackToTop from "../components/BackToTop";
 
 function GlobalScrollDivider({ scrollYProgress }) {
@@ -74,6 +75,11 @@ export default function Terms() {
 
   return (
     <div className="bg-[#161616] text-white min-h-screen selection:bg-[#ED502C]/30 selection:text-white">
+      <SEO
+        title="Terms & Conditions — MKD Official"
+        description="Review the terms of service, project milestones, revision policies, and commercial usage rights for design services and tools provided by MKD."
+        canonical="/terms"
+      />
       {/* Header */}
       <section className="relative max-w-[1366px] mx-auto px-6 md:px-[98px] pt-28 md:pt-[130px]">
         <motion.div

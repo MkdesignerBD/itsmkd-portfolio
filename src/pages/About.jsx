@@ -1,4 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
+import SEO from "../components/SEO";
 import mofijulProfile from "../assets/about/mofijul-profile.jpg";
 import BackToTop from "../components/BackToTop";
 
@@ -56,11 +57,45 @@ const experiences = [
   },
 ];
 
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://itsmkd.com/about/#profile",
+      "url": "https://itsmkd.com/about",
+      "name": "About Mofijul Islam (MKD)",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Mofijul Islam",
+        "alternateName": ["MKD", "mkdesigner"],
+        "url": "https://itsmkd.com",
+        "image": "https://itsmkd.com/logo.png",
+        "jobTitle": "Head of Designer & Product Visuals Specialist",
+        "sameAs": [
+          "https://www.behance.net/itsmkd",
+          "https://www.facebook.com/MKdesignerBD",
+          "https://www.instagram.com/mkdesignerbd/",
+          "https://www.youtube.com/@MkDesigner",
+          "https://x.com/Mkdesigner1122"
+        ]
+      }
+    }
+  ]
+};
+
 export default function About() {
   const { scrollYProgress } = useScroll();
 
   return (
     <div className="bg-[#161616] text-white min-h-screen">
+      <SEO
+        title="About Mofijul Islam (MKD) — Product Visuals Designer & Creator"
+        description="Learn about Mofijul Islam (MKD), a designer specializing in high-converting e-commerce product visuals and developer of the MKD Grid System tool."
+        keywords="About MKD, Mofijul Islam Designer, Amazon Specialist Dhaka, Graphic Designer Profile"
+        canonical="/about"
+        schema={aboutSchema}
+      />
       {/* 1. Who is MKD / Story Section */}
       <section className="relative max-w-[1366px] mx-auto px-6 md:px-[98px] pt-28 md:pt-[130px]">
         <motion.div

@@ -2,46 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://itsmkd.com/</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://itsmkd.com/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://itsmkd.com/tools</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://itsmkd.com/work</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://itsmkd.com/service</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://itsmkd.com/gallery</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://itsmkd.com/service</loc>
+    <loc>https://itsmkd.com/about</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://itsmkd.com/tools</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itsmkd.com/contact</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itsmkd.com/terms</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://itsmkd.com/privacy</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

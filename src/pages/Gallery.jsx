@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import SEO from "../components/SEO";
 import BackToTop from "../components/BackToTop";
 
 // 16 Random Gallery Cards from Gallery img-2.pdf
@@ -55,12 +56,37 @@ function GlobalScrollDivider({ scrollYProgress }) {
   );
 }
 
+const gallerySchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ImageGallery",
+      "@id": "https://itsmkd.com/gallery/#gallery",
+      "url": "https://itsmkd.com/gallery",
+      "name": "MKD Product Visuals & Lifestyle Gallery",
+      "description": "Curated gallery of e-commerce infographics, product rendering, and feature graphics by Mofijul Islam (MKD).",
+      "creator": {
+        "@type": "Person",
+        "name": "Mofijul Islam (MKD)",
+        "url": "https://itsmkd.com"
+      }
+    }
+  ]
+};
+
 export default function Gallery() {
   const { scrollYProgress } = useScroll();
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <div className="bg-[#161616] text-white min-h-screen selection:bg-[#ED502C]/30 selection:text-white">
+      <SEO
+        title="Design Gallery — Curated E-Commerce & Product Visuals | MKD"
+        description="Browse a curated visual showcase of product renders, lifestyle infographics, and packaging designs by Mofijul Islam (MKD)."
+        keywords="E-commerce Gallery, Amazon Visual Showcase, Product Infographics, Packaging Portfolio, MKD Gallery"
+        canonical="/gallery"
+        schema={gallerySchema}
+      />
       {/* 1. Header Section */}
       <section className="relative max-w-[1366px] mx-auto px-6 md:px-[98px] pt-28 md:pt-[130px]">
         <motion.div

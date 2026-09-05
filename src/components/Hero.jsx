@@ -73,7 +73,7 @@ export default function Hero() {
             <Floating delay={0.1}>
               <img
                 src={leftBig}
-                alt=""
+                alt="Amazon E-Commerce Product Visual by MKD"
                 className="w-full rounded-md shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
               />
             </Floating>
@@ -84,7 +84,7 @@ export default function Hero() {
             <Floating delay={0.2}>
               <img
                 src={leftSmall}
-                alt=""
+                alt="Amazon Listing Card and Infographics"
                 className="w-full rounded-md shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
               />
             </Floating>
@@ -99,7 +99,7 @@ export default function Hero() {
             >
               <img
                 src={phone}
-                alt=""
+                alt="Mobile Product Showcase and Conversion Graphics"
                 className="w-full drop-shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
               />
             </motion.div>
@@ -110,7 +110,7 @@ export default function Hero() {
             <Floating delay={0.25}>
               <img
                 src={rightMid}
-                alt=""
+                alt="E-Commerce Feature Callout Visual"
                 className="w-full rounded-md shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
               />
             </Floating>
@@ -121,7 +121,7 @@ export default function Hero() {
             <Floating delay={0.3}>
               <img
                 src={rightSmall}
-                alt=""
+                alt="3D Product Mockup and Packaging Design"
                 className="w-full rounded-md shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
               />
             </Floating>

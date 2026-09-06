@@ -703,18 +703,24 @@ export default function Tools() {
   const [openFaq, setOpenFaq] = useState(null);
 
   // Currency & Payment Gateway State
-  const [currency, setCurrency] = useState("USD");
+  const [currency, setCurrency] = useState("BDT");
   const [paymentTab, setPaymentTab] = useState("bkash");
 
-  // bKash Form State
-  const [trxId, setTrxId] = useState("");
+  // bKash & Nagad Form State
+  const [paymentChannel, setPaymentChannel] = useState("bkash"); // "bkash" | "nagad"
+  const [customerName, setCustomerName] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [senderNumber, setSenderNumber] = useState("");
+  const [trxId, setTrxId] = useState("");
+  const [isSubmittingPayment, setIsSubmittingPayment] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [copiedNumber, setCopiedNumber] = useState(false);
+  const [paymentError, setPaymentError] = useState("");
 
-  // Prices
+  // Prices & Payment Numbers
   const priceUSD = "2.99";
   const priceBDT = 299;
+  const paymentPhone = "01744718197";
 
   // Feedback Form State
   const [feedbackCategory, setFeedbackCategory] = useState("Feature Request");
@@ -932,13 +938,50 @@ export default function Tools() {
     },
   ];
 
-  const handleBkashSubmit = (e) => {
+  const handleBkashSubmit = async (e) => {
     e.preventDefault();
-    if (!trxId || !userEmail) {
-      alert("অনুগ্রহ করে আপনার Email এবং Transaction ID (TrxID) লিখুন!");
+    if (!trxId.trim() || !userEmail.trim()) {
+      alert("অনুগ্রহ করে আপনার Email এবং Transaction ID (TrxID) সঠিকভাবে লিখুন!");
       return;
     }
-    setIsSubmitted(true);
+
+    setIsSubmittingPayment(true);
+    setPaymentError("");
+
+    try {
+      const payload = {
+        _subject: `New MKD Grid System Pro Order - ${paymentChannel === "bkash" ? "bKash" : "Nagad"} (৳${priceBDT})`,
+        source: "MKD Grid System Pro Checkout (BD Local)",
+        product: "MKD Grid System Pro for Adobe Illustrator",
+        price: `${priceBDT} BDT`,
+        payment_method: paymentChannel === "bkash" ? "bKash (Send Money)" : "Nagad (Send Money)",
+        receiver_number: paymentPhone,
+        transaction_id: trxId.trim().toUpperCase(),
+        sender_number: senderNumber.trim() || "Not specified",
+        customer_name: customerName.trim() || "Customer",
+        customer_email: userEmail.trim(),
+        submitted_at: new Date().toLocaleString("en-US", { timeZone: "Asia/Dhaka" }),
+      };
+
+      const res = await fetch("https://formspree.io/f/xreyaqzo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        setIsSubmitted(true);
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setPaymentError(
+          data.error || (data.errors && data.errors[0] ? data.errors[0].message : "অর্ডার রিকোয়েস্ট পাঠাতে সমস্যা হয়েছে। অনুগ্রহ করে পুনরায় চেষ্টা করুন।")
+        );
+      }
+    } catch (err) {
+      setPaymentError("ইন্টারনেট সংযোগ চেক করুন অথবা সরাসরি contact@itsmkd.com এ ইমেইল করুন।");
+    } finally {
+      setIsSubmittingPayment(false);
+    }
   };
 
   return (
@@ -1187,8 +1230,8 @@ export default function Tools() {
             whileHover={{ y: -4, scale: 1.01 }}
             className="rounded-3xl bg-gradient-to-b from-[#181818] to-[#121212] border-2 border-[#f15a28] p-8 flex flex-col justify-between relative shadow-[0_20px_60px_rgba(241,90,40,0.25)]"
           >
-            <div className="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-white/10 border border-white/20 text-white/80 text-xs font-bold uppercase tracking-wider shadow-lg">
-              Coming Soon
+            <div className="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-[#f15a28] text-white text-xs font-bold uppercase tracking-wider shadow-lg">
+              {currency === "BDT" ? "🇧🇩 bKash / Nagad চালু" : "Lifetime Pro"}
             </div>
 
             <div>
@@ -1231,16 +1274,19 @@ export default function Tools() {
               </ul>
             </div>
 
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               type="button"
-              disabled
-              className="mt-8 w-full py-4 rounded-xl bg-white/[0.06] border border-white/15 text-white/50 font-semibold flex items-center justify-center gap-2 cursor-not-allowed select-none text-center"
+              onClick={() => {
+                setPaymentTab(currency === "BDT" ? "bkash" : "international");
+                setShowCheckoutModal(true);
+              }}
+              className="mt-8 w-full py-4 rounded-xl bg-[#f15a28] hover:bg-[#d94a1d] text-white font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_25px_rgba(241,90,40,0.35)] text-center text-sm"
             >
-              <span className="w-2 h-2 rounded-full bg-[#f15a28] animate-pulse"></span>
-              <span>
-                {currency === "USD" ? "Coming Soon • Payment Gateway in Setup" : "শীঘ্রই আসছে • পেমেন্ট গেটওয়ে সেটআপ চলছে"}
-              </span>
-            </button>
+              <span>{currency === "BDT" ? "প্রিমিয়াম লাইসেন্স নিন (৳২৯৯)" : "Get Lifetime Pro ($2.99)"}</span>
+              <span>&rarr;</span>
+            </motion.button>
           </motion.div>
         </div>
       </section>
@@ -1573,30 +1619,58 @@ export default function Tools() {
                         </div>
                         <div className="text-right shrink-0">
                           <span className="inline-flex items-center px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                            ৭৫% ছাড় (75% OFF)
+                            ৭৫% ছাড় (Lifetime Pro)
                           </span>
                         </div>
+                      </div>
+
+                      {/* Payment Channel Selector (bKash or Nagad) */}
+                      <div className="grid grid-cols-2 gap-2">
+                        <button
+                          type="button"
+                          onClick={() => setPaymentChannel("bkash")}
+                          className={`py-2 px-3 rounded-xl border text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
+                            paymentChannel === "bkash"
+                              ? "bg-[#e2136e]/15 border-[#e2136e] text-white shadow-sm"
+                              : "bg-white/[0.02] border-white/10 text-white/50 hover:text-white"
+                          }`}
+                        >
+                          <span className="w-2 h-2 rounded-full bg-[#e2136e]"></span>
+                          <span>bKash (বিকাশ)</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setPaymentChannel("nagad")}
+                          className={`py-2 px-3 rounded-xl border text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
+                            paymentChannel === "nagad"
+                              ? "bg-[#f7941d]/15 border-[#f7941d] text-white shadow-sm"
+                              : "bg-white/[0.02] border-white/10 text-white/50 hover:text-white"
+                          }`}
+                        >
+                          <span className="w-2 h-2 rounded-full bg-[#f7941d]"></span>
+                          <span>Nagad (নগদ)</span>
+                        </button>
                       </div>
 
                       {/* Instructions Box */}
                       <div className="bg-white/[0.02] p-3.5 rounded-xl border border-white/5 text-xs space-y-2 text-white/75 min-w-0">
                         <div className="text-[11px] sm:text-[12px] font-medium text-white/90 flex items-center justify-between gap-2">
-                          <span>১. বিকাশ বা নগদ থেকে <strong>Send Money</strong> করুন:</span>
-                          <span className="text-[10px] text-white/40 bg-white/5 px-2 py-0.5 rounded-md shrink-0">Personal</span>
+                          <span>১. আপনার {paymentChannel === "bkash" ? "বিকাশ" : "নগদ"} থেকে <strong>Send Money</strong> করুন:</span>
+                          <span className="text-[10px] text-[#f15a28] bg-[#f15a28]/10 border border-[#f15a28]/25 px-2 py-0.5 rounded-md font-semibold shrink-0">Personal</span>
                         </div>
 
-                        <div className="p-2.5 bg-black/50 rounded-xl border border-white/10 flex items-center justify-between font-mono text-xs sm:text-sm text-white">
-                          <span className="tracking-wider text-[#f15a28] font-bold">01700-000000</span>
+                        <div className="p-2.5 bg-black/60 rounded-xl border border-white/10 flex items-center justify-between font-mono text-xs sm:text-sm text-white">
+                          <span className="tracking-wider text-[#f15a28] font-bold text-sm sm:text-base">01744-718197</span>
                           <button
                             type="button"
                             onClick={() => {
-                              navigator.clipboard.writeText("01700000000");
+                              navigator.clipboard.writeText("01744718197");
                               setCopiedNumber(true);
                               setTimeout(() => setCopiedNumber(false), 2000);
                             }}
                             className={`text-xs px-2.5 py-1 rounded-lg font-sans cursor-pointer transition shrink-0 ${
                               copiedNumber
-                                ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                                ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold"
                                 : "bg-white/10 hover:bg-white/20 text-white"
                             }`}
                           >
@@ -1605,18 +1679,31 @@ export default function Tools() {
                         </div>
 
                         <p className="text-[11px] text-white/60 leading-relaxed">
-                          ২. রেফারেন্সে আপনার নাম বা ইমেইল লিখুন।
+                          ২. রেফারেন্সে আপনার নাম বা <strong>MKD</strong> লিখুন।
                         </p>
                         <p className="text-[11px] text-white/60 leading-relaxed">
-                          ৩. নিচের ফর্মে আপনার <strong>TrxID</strong> এবং <strong>Email</strong> দিয়ে সাবমিট করুন।
+                          ৩. নিচের ফর্মে আপনার <strong>Email</strong> ও <strong>TrxID</strong> দিয়ে সাবমিট করুন।
                         </p>
                       </div>
 
                       {/* Input fields */}
-                      <div className="space-y-3">
+                      <div className="space-y-2.5">
                         <div>
                           <label className="block text-[11px] font-medium text-white/70 mb-1">
-                            আপনার ইমেইল অ্যাড্রেস (যেখানে লাইসেন্স key ও ফাইল যাবে) *
+                            আপনার নাম (Customer Name)
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="আপনার নাম লিখুন"
+                            value={customerName}
+                            onChange={(e) => setCustomerName(e.target.value)}
+                            className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-[#f15a28] focus:bg-white/[0.05] rounded-xl px-3.5 py-2 text-sm text-white placeholder:text-white/30 outline-none transition"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-[11px] font-medium text-white/70 mb-1">
+                            আপনার ইমেইল অ্যাড্রেস (যেখানে লাইসেন্স কী ও ফাইল পাঠানো হবে) *
                           </label>
                           <input
                             type="email"
@@ -1624,64 +1711,112 @@ export default function Tools() {
                             placeholder="yourname@gmail.com"
                             value={userEmail}
                             onChange={(e) => setUserEmail(e.target.value)}
-                            className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-[#f15a28] focus:bg-white/[0.05] rounded-xl px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 outline-none transition"
+                            className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-[#f15a28] focus:bg-white/[0.05] rounded-xl px-3.5 py-2 text-sm text-white placeholder:text-white/30 outline-none transition"
                           />
                         </div>
 
-                        <div>
-                          <label className="block text-[11px] font-medium text-white/70 mb-1">
-                            bKash / Nagad Transaction ID (TrxID) *
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            placeholder="e.g. 9J8A7K2XYZ"
-                            value={trxId}
-                            onChange={(e) => setTrxId(e.target.value)}
-                            className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-[#f15a28] focus:bg-white/[0.05] rounded-xl px-3.5 py-2.5 text-sm text-white font-mono uppercase placeholder:text-white/30 outline-none transition"
-                          />
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          <div>
+                            <label className="block text-[11px] font-medium text-white/70 mb-1">
+                              যে নম্বর থেকে টাকা পাঠিয়েছেন
+                            </label>
+                            <input
+                              type="tel"
+                              placeholder="01XXXXXXXXX"
+                              value={senderNumber}
+                              onChange={(e) => setSenderNumber(e.target.value)}
+                              className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-[#f15a28] focus:bg-white/[0.05] rounded-xl px-3 py-2 text-sm text-white font-mono placeholder:text-white/30 outline-none transition"
+                            />
+                          </div>
+
+                          <div>
+                            <label className="block text-[11px] font-medium text-white/70 mb-1">
+                              Transaction ID (TrxID) *
+                            </label>
+                            <input
+                              type="text"
+                              required
+                              placeholder="e.g. 9J8A7K2XYZ"
+                              value={trxId}
+                              onChange={(e) => setTrxId(e.target.value)}
+                              className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-[#f15a28] focus:bg-white/[0.05] rounded-xl px-3 py-2 text-sm text-white font-mono uppercase placeholder:text-white/30 outline-none transition"
+                            />
+                          </div>
                         </div>
                       </div>
+
+                      {paymentError && (
+                        <div className="p-2.5 rounded-xl bg-rose-500/10 border border-rose-500/25 text-rose-300 text-xs text-center">
+                          {paymentError}
+                        </div>
+                      )}
 
                       <motion.button
                         whileHover={{ scale: 1.01 }}
                         whileTap={{ scale: 0.99 }}
                         type="submit"
-                        className="w-full py-3 px-4 rounded-xl bg-[#f15a28] hover:bg-[#d94a1d] text-white font-semibold transition flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_20px_rgba(241,90,40,0.25)] text-xs sm:text-sm mt-3 sm:mt-4 text-center"
+                        disabled={isSubmittingPayment}
+                        className={`w-full py-3 px-4 rounded-xl bg-[#f15a28] hover:bg-[#d94a1d] text-white font-semibold transition flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(241,90,40,0.25)] text-xs sm:text-sm mt-3 text-center ${
+                          isSubmittingPayment ? "opacity-75 cursor-not-allowed" : "cursor-pointer"
+                        }`}
                       >
-                        <span>অর্ডার কনফার্ম করুন &amp; ফাইল ডাউনলোড করুন &rarr;</span>
+                        {isSubmittingPayment ? (
+                          <>
+                            <svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24" fill="none">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                            </svg>
+                            <span>অর্ডার পাঠানো হচ্ছে...</span>
+                          </>
+                        ) : (
+                          <span>অর্ডার কনফার্ম করুন (৳২৯৯) &rarr;</span>
+                        )}
                       </motion.button>
                     </form>
                   ) : (
-                    /* Success / Instant Download State */
+                    /* Success / Order Placed State */
                     <motion.div
                       initial={{ scale: 0.95, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
-                      className="text-center py-3 space-y-4"
+                      className="text-center py-2 space-y-3.5"
                     >
-                      <div className="w-12 h-12 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full flex items-center justify-center text-xl mx-auto font-bold">
+                      <div className="w-12 h-12 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full flex items-center justify-center text-xl mx-auto font-bold shadow-[0_0_20px_rgba(16,185,129,0.2)]">
                         ✓
                       </div>
                       <div>
-                        <h4 className="text-base font-semibold text-white">ধন্যবাদ! পেমেন্ট রিকোয়েস্ট গৃহীত হয়েছে</h4>
+                        <h4 className="text-base font-semibold text-white">ধন্যবাদ! পেমেন্ট রিকোয়েস্ট সফলভাবে গৃহীত হয়েছে</h4>
                         <p className="text-xs text-white/60 max-w-sm mx-auto mt-1 leading-relaxed">
-                          আপনার TrxID (<span className="font-mono text-[#f15a28] font-bold">{trxId}</span>) এবং ইমেইল (<span className="text-white font-semibold">{userEmail}</span>) রেকর্ড করা হয়েছে।
+                          আপনার TrxID (<span className="font-mono text-[#f15a28] font-bold">{trxId}</span>) এবং ইমেইল (<span className="text-white font-semibold">{userEmail}</span>) আমাদের সিস্টেমে রেকর্ড করা হয়েছে।
                         </p>
                       </div>
 
-                      <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/10 text-left space-y-1.5 text-xs">
-                        <div className="text-white/60 text-[11px] font-medium">আপনার লাইসেন্স কী:</div>
-                        <div className="p-2.5 bg-black/60 font-mono text-emerald-400 font-semibold rounded-lg select-all text-xs tracking-wider">
-                          MKD-PRO-GRID-2026-X892-LIFETIME
+                      <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/10 text-left space-y-2 text-xs">
+                        <div className="text-emerald-400 text-[11px] font-semibold uppercase tracking-wider flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                          পরবর্তী ধাপ (Delivery)
+                        </div>
+                        <p className="text-white/80 leading-relaxed text-[11px] sm:text-xs">
+                          আমরা পেমেন্ট তথ্য যাচাই করে সর্বোচ্চ <strong>১৫ থেকে ৩০ মিনিটের মধ্যে</strong> আপনার ইমেইলে সম্পূর্ণ প্রিমিয়াম MKD Grid System প্যাকেজ এবং আজীবন মেয়াদের লাইসেন্স কী (License Key) পাঠিয়ে দেব।
+                        </p>
+                        <div className="pt-1.5 border-t border-white/10 flex items-center justify-between text-[10px] text-white/50">
+                          <span>সরাসরি যোগাযোগ:</span>
+                          <a href="mailto:contact@itsmkd.com" className="text-white hover:text-[#f15a28] underline">
+                            contact@itsmkd.com
+                          </a>
                         </div>
                       </div>
 
                       <button
                         type="button"
-                        disabled
-                        className="w-full py-3.5 rounded-xl bg-white/10 text-white/50 font-semibold flex items-center justify-center gap-2 cursor-not-allowed select-none text-sm"
+                        onClick={() => {
+                          setShowCheckoutModal(false);
+                          setIsSubmitted(false);
+                          setTrxId("");
+                          setSenderNumber("");
+                        }}
+                        className="w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-medium transition cursor-pointer text-xs sm:text-sm"
                       >
-                        <span>পেমেন্ট গেটওয়ে চালুর পর ফাইল অ্যাক্টিভ হবে</span>
+                        <span>ঠিক আছে / উইন্ডো বন্ধ করুন</span>
                       </button>
                     </motion.div>
                   )}

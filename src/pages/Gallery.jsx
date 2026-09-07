@@ -61,14 +61,14 @@ const gallerySchema = {
   "@graph": [
     {
       "@type": "ImageGallery",
-      "@id": "https://itsmkd.com/gallery/#gallery",
-      "url": "https://itsmkd.com/gallery",
+      "@id": "https://www.itsmkd.com/gallery/#gallery",
+      "url": "https://www.itsmkd.com/gallery",
       "name": "MKD Product Visuals & Lifestyle Gallery",
       "description": "Curated gallery of e-commerce infographics, product rendering, and feature graphics by Mofijul Islam (MKD).",
       "creator": {
         "@type": "Person",
         "name": "Mofijul Islam (MKD)",
-        "url": "https://itsmkd.com"
+        "url": "https://www.itsmkd.com"
       }
     }
   ]

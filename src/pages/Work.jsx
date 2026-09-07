@@ -174,14 +174,14 @@ const workSchema = {
   "@graph": [
     {
       "@type": "CollectionPage",
-      "@id": "https://itsmkd.com/work/#collection",
-      "url": "https://itsmkd.com/work",
+      "@id": "https://www.itsmkd.com/work/#collection",
+      "url": "https://www.itsmkd.com/work",
       "name": "MKD Portfolio & Design Case Studies",
       "description": "Comprehensive portfolio of Amazon Listing Image Sets, A+ EBC Modules, and Conversion Graphics by Mofijul Islam (MKD).",
       "creator": {
         "@type": "Person",
         "name": "Mofijul Islam (MKD)",
-        "url": "https://itsmkd.com"
+        "url": "https://www.itsmkd.com"
       }
     }
   ]

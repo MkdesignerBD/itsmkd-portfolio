@@ -25,8 +25,8 @@ const contactSchema = {
   "@graph": [
     {
       "@type": "ContactPage",
-      "@id": "https://itsmkd.com/contact/#contact",
-      "url": "https://itsmkd.com/contact",
+      "@id": "https://www.itsmkd.com/contact/#contact",
+      "url": "https://www.itsmkd.com/contact",
       "name": "Contact MKD — Start Your Design Project",
       "description": "Send a direct message or project brief to Mofijul Islam (MKD) for Amazon listing graphics, EBC, 3D modeling, or MKD Grid System inquiries.",
       "mainEntity": {

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://itsmkd.com";
-const DEFAULT_IMAGE = "https://itsmkd.com/logo.png";
+const SITE_URL = "https://www.itsmkd.com";
+const DEFAULT_IMAGE = "https://www.itsmkd.com/logo.png";
 const SITE_NAME = "MKD Official";
 
 function updateMeta(attr, key, content) {

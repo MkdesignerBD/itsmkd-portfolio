@@ -14,21 +14,21 @@ const homeSchema = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://itsmkd.com/#website",
-      "url": "https://itsmkd.com",
+      "@id": "https://www.itsmkd.com/#website",
+      "url": "https://www.itsmkd.com",
       "name": "MKD Official",
       "description": "Product Visuals Designer & Amazon E-Commerce Specialist",
       "publisher": {
-        "@id": "https://itsmkd.com/#person"
+        "@id": "https://www.itsmkd.com/#person"
       }
     },
     {
       "@type": "Person",
-      "@id": "https://itsmkd.com/#person",
+      "@id": "https://www.itsmkd.com/#person",
       "name": "Mofijul Islam",
       "alternateName": ["MKD", "mkdesigner"],
-      "url": "https://itsmkd.com",
-      "image": "https://itsmkd.com/logo.png",
+      "url": "https://www.itsmkd.com",
+      "image": "https://www.itsmkd.com/logo.png",
       "jobTitle": "Product Visuals Designer & Amazon E-Commerce Specialist",
       "worksFor": {
         "@type": "Organization",

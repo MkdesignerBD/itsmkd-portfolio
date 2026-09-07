@@ -117,14 +117,14 @@ const serviceSchema = {
   "@graph": [
     {
       "@type": "ProfessionalService",
-      "@id": "https://itsmkd.com/service/#service",
+      "@id": "https://www.itsmkd.com/service/#service",
       "name": "MKD E-Commerce Design Services",
-      "url": "https://itsmkd.com/service",
+      "url": "https://www.itsmkd.com/service",
       "description": "Professional Amazon Listing Image Design, A+ EBC Content, Brand Storefronts, and 3D Product Mockups by Mofijul Islam (MKD).",
       "provider": {
         "@type": "Person",
         "name": "Mofijul Islam (MKD)",
-        "url": "https://itsmkd.com"
+        "url": "https://www.itsmkd.com"
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",

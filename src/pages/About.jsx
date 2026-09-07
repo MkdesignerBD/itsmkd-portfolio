@@ -62,15 +62,15 @@ const aboutSchema = {
   "@graph": [
     {
       "@type": "ProfilePage",
-      "@id": "https://itsmkd.com/about/#profile",
-      "url": "https://itsmkd.com/about",
+      "@id": "https://www.itsmkd.com/about/#profile",
+      "url": "https://www.itsmkd.com/about",
       "name": "About Mofijul Islam (MKD)",
       "mainEntity": {
         "@type": "Person",
         "name": "Mofijul Islam",
         "alternateName": ["MKD", "mkdesigner"],
-        "url": "https://itsmkd.com",
-        "image": "https://itsmkd.com/logo.png",
+        "url": "https://www.itsmkd.com",
+        "image": "https://www.itsmkd.com/logo.png",
         "jobTitle": "Head of Designer & Product Visuals Specialist",
         "sameAs": [
           "https://www.behance.net/itsmkd",

@@ -631,15 +631,15 @@ const toolsSchema = {
   "@graph": [
     {
       "@type": "SoftwareApplication",
-      "@id": "https://itsmkd.com/tools/#software",
+      "@id": "https://www.itsmkd.com/tools/#software",
       "name": "MKD Grid System",
       "applicationCategory": "DesignApplication",
       "operatingSystem": "Windows 10/11, macOS (Intel & Apple Silicon)",
       "softwareRequirements": "Adobe Illustrator CC 2018 - 2026",
       "softwareVersion": "1.0.0",
       "description": "Precision Logo Construction and Grid System Extension for Adobe Illustrator. Generate isometric matrices, circular gridding, and clearspace rules in 1-click.",
-      "url": "https://itsmkd.com/tools",
-      "image": "https://itsmkd.com/logo.png",
+      "url": "https://www.itsmkd.com/tools",
+      "image": "https://www.itsmkd.com/logo.png",
       "offers": [
         {
           "@type": "Offer",
@@ -647,7 +647,7 @@ const toolsSchema = {
           "price": "0.00",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "url": "https://itsmkd.com/tools"
+          "url": "https://www.itsmkd.com/tools"
         },
         {
           "@type": "Offer",
@@ -655,18 +655,18 @@ const toolsSchema = {
           "price": "2.99",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "url": "https://itsmkd.com/tools"
+          "url": "https://www.itsmkd.com/tools"
         }
       ],
       "creator": {
         "@type": "Person",
         "name": "Mofijul Islam (MKD)",
-        "url": "https://itsmkd.com"
+        "url": "https://www.itsmkd.com"
       }
     },
     {
       "@type": "FAQPage",
-      "@id": "https://itsmkd.com/tools/#faq",
+      "@id": "https://www.itsmkd.com/tools/#faq",
       "mainEntity": [
         {
           "@type": "Question",

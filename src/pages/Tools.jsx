@@ -1248,7 +1248,7 @@ export default function Tools() {
             className="rounded-3xl bg-gradient-to-b from-[#181818] to-[#121212] border-2 border-[#f15a28] p-8 flex flex-col justify-between relative shadow-[0_20px_60px_rgba(241,90,40,0.25)]"
           >
             <div className="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-[#f15a28] text-white text-xs font-bold uppercase tracking-wider shadow-lg">
-              {currency === "BDT" ? "🇧🇩 bKash / Nagad চালু" : "Lifetime Pro"}
+              {currency === "BDT" ? "🇧🇩 bKash / Nagad" : "Lifetime Pro"}
             </div>
 
             <div>

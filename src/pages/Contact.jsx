@@ -75,6 +75,12 @@ export default function Contact() {
 
       if (res.ok) {
         setStatus("success");
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "generate_lead", {
+            service_requested: form.service,
+            lead_source: form.source,
+          });
+        }
         setForm({
           name: "",
           email: "",

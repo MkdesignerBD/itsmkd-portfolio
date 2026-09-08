@@ -971,6 +971,14 @@ export default function Tools() {
 
       if (res.ok) {
         setIsSubmitted(true);
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "purchase_order_submitted", {
+            currency: "BDT",
+            value: priceBDT,
+            payment_method: paymentChannel,
+            transaction_id: trxId.trim().toUpperCase(),
+          });
+        }
       } else {
         const data = await res.json().catch(() => ({}));
         setPaymentError(
@@ -1219,6 +1227,15 @@ export default function Tools() {
               whileTap={{ scale: 0.98 }}
               href="/downloads/MKD_Grid_System_Beta_Trial_v1.0.zip"
               download="MKD_Grid_System_Beta_Trial_v1.0.zip"
+              onClick={() => {
+                if (typeof window.gtag === "function") {
+                  window.gtag("event", "download_beta_trial", {
+                    event_category: "Software",
+                    event_label: "MKD Grid System Beta Trial v1.0",
+                    file_name: "MKD_Grid_System_Beta_Trial_v1.0.zip",
+                  });
+                }
+              }}
               className="mt-8 w-full py-3.5 rounded-xl border border-white/30 hover:border-white/60 text-white font-medium transition cursor-pointer flex items-center justify-center text-center"
             >
               Download Free Trial

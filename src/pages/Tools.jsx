@@ -1250,10 +1250,6 @@ export default function Tools() {
             whileHover={{ y: -4, scale: 1.01 }}
             className="rounded-3xl bg-gradient-to-b from-[#181818] to-[#121212] border-2 border-[#f15a28] p-8 flex flex-col justify-between relative shadow-[0_20px_60px_rgba(241,90,40,0.25)]"
           >
-            <div className="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-[#f15a28] text-white text-xs font-bold uppercase tracking-wider shadow-lg">
-              {currency === "BDT" ? "🇧🇩 bKash / Nagad" : "Lifetime Pro"}
-            </div>
-
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#f15a28] bg-[#f15a28]/15 px-3 py-1 rounded-full">
                 Lifetime Pro Edition
@@ -1305,7 +1301,7 @@ export default function Tools() {
                 }}
                 className="mt-8 w-full py-4 rounded-xl bg-[#f15a28] hover:bg-[#d94a1d] text-white font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_25px_rgba(241,90,40,0.35)] text-center text-sm"
               >
-                <span>{currency === "BDT" ? "প্রিমিয়াম লাইসেন্স নিন (৳২৯৯)" : "Get Lifetime Pro ($2.99)"}</span>
+                <span>{currency === "BDT" ? "Get Lifetime Pro (৳299)" : "Get Lifetime Pro ($2.99)"}</span>
                 <span>&rarr;</span>
               </motion.button>
             ) : (
@@ -1317,7 +1313,7 @@ export default function Tools() {
                 <svg className="w-4 h-4 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>{currency === "BDT" ? "পেমেন্ট সাময়িকভাবে বন্ধ আছে (শীঘ্রই চালু হবে)" : "Payment Coming Soon"}</span>
+                <span>Payment Coming Soon</span>
               </button>
             )}
           </motion.div>

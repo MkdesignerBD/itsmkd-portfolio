@@ -718,7 +718,7 @@ export default function Tools() {
   const [paymentError, setPaymentError] = useState("");
 
   // Feature Flags
-  const SHOW_PREMIUM_OPTION = false; // Set to true to re-enable Lifetime Pro pricing and checkout
+  const IS_PAYMENT_ENABLED = false; // Set to true when payment gateway / bKash is ready
 
   // Prices & Payment Numbers
   const priceUSD = "2.99";
@@ -1149,51 +1149,47 @@ export default function Tools() {
       </div>
 
       {/* =================================================================
-          3. PRICING & DOWNLOAD SECTION
+          3. PRICING & PURCHASE SECTION (DUAL CURRENCY: USD / BDT)
           ================================================================= */}
       <section id="pricing" className="max-w-[1366px] mx-auto px-6 md:px-[98px] pt-16 md:pt-24 pb-16 md:pb-24 relative z-10">
         <div className="text-center max-w-[650px] mx-auto mb-10">
           <span className="text-[#f15a28] text-xs font-semibold uppercase tracking-widest block mb-2">
-            {SHOW_PREMIUM_OPTION ? "Pricing & Licensing" : "Free Beta Trial"}
+            Pricing &amp; Licensing
           </span>
           <h2 className="text-3xl md:text-4xl font-medium text-white mb-3">
-            {SHOW_PREMIUM_OPTION ? "Invest Once, Build Forever" : "Download MKD Grid System"}
+            Invest Once, Build Forever
           </h2>
           <p className="text-sm md:text-base text-white/60">
-            {SHOW_PREMIUM_OPTION
-              ? "No monthly subscriptions. Get full lifetime access with all future updates included."
-              : "Download the free 3-Day Beta Trial for Adobe Illustrator and start building precision grids in seconds."}
+            No monthly subscriptions. Get full lifetime access with all future updates included.
           </p>
 
-          {/* Currency Switcher (Hidden when premium option is turned off) */}
-          {SHOW_PREMIUM_OPTION && (
-            <div className="inline-flex items-center gap-2 p-1.5 rounded-xl bg-[#1c1c1c] border border-white/10 mt-6">
-              <button
-                onClick={() => setCurrency("USD")}
-                className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                  currency === "USD"
-                    ? "bg-[#f15a28] text-white shadow"
-                    : "text-white/60 hover:text-white"
-                }`}
-              >
-                USD ($2.99)
-              </button>
-              <button
-                onClick={() => setCurrency("BDT")}
-                className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-                  currency === "BDT"
-                    ? "bg-[#e2136e] text-white shadow"
-                    : "text-white/60 hover:text-white"
-                }`}
-              >
-                <span>🇧🇩 BDT (৳299)</span>
-                <span className="text-[10px] bg-white/20 px-1 rounded">bKash</span>
-              </button>
-            </div>
-          )}
+          {/* Currency Switcher */}
+          <div className="inline-flex items-center gap-2 p-1.5 rounded-xl bg-[#1c1c1c] border border-white/10 mt-6">
+            <button
+              onClick={() => setCurrency("USD")}
+              className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                currency === "USD"
+                  ? "bg-[#f15a28] text-white shadow"
+                  : "text-white/60 hover:text-white"
+              }`}
+            >
+              USD ($2.99)
+            </button>
+            <button
+              onClick={() => setCurrency("BDT")}
+              className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                currency === "BDT"
+                  ? "bg-[#e2136e] text-white shadow"
+                  : "text-white/60 hover:text-white"
+              }`}
+            >
+              <span>🇧🇩 BDT (৳299)</span>
+              <span className="text-[10px] bg-white/20 px-1 rounded">bKash</span>
+            </button>
+          </div>
         </div>
 
-        <div className={SHOW_PREMIUM_OPTION ? "grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch" : "max-w-xl mx-auto"}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           {/* Option 1: Free Trial */}
           <motion.div
             whileHover={{ y: -4 }}
@@ -1249,56 +1245,56 @@ export default function Tools() {
             </motion.a>
           </motion.div>
 
-          {/* Option 2: Lifetime Pro License (Conditionally Rendered) */}
-          {SHOW_PREMIUM_OPTION && (
-            <motion.div
-              whileHover={{ y: -4, scale: 1.01 }}
-              className="rounded-3xl bg-gradient-to-b from-[#181818] to-[#121212] border-2 border-[#f15a28] p-8 flex flex-col justify-between relative shadow-[0_20px_60px_rgba(241,90,40,0.25)]"
-            >
-              <div className="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-[#f15a28] text-white text-xs font-bold uppercase tracking-wider shadow-lg">
-                {currency === "BDT" ? "🇧🇩 bKash / Nagad" : "Lifetime Pro"}
-              </div>
+          {/* Option 2: Lifetime Pro License */}
+          <motion.div
+            whileHover={{ y: -4, scale: 1.01 }}
+            className="rounded-3xl bg-gradient-to-b from-[#181818] to-[#121212] border-2 border-[#f15a28] p-8 flex flex-col justify-between relative shadow-[0_20px_60px_rgba(241,90,40,0.25)]"
+          >
+            <div className="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-[#f15a28] text-white text-xs font-bold uppercase tracking-wider shadow-lg">
+              {currency === "BDT" ? "🇧🇩 bKash / Nagad" : "Lifetime Pro"}
+            </div>
 
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#f15a28] bg-[#f15a28]/15 px-3 py-1 rounded-full">
-                  Lifetime Pro Edition
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-[#f15a28] bg-[#f15a28]/15 px-3 py-1 rounded-full">
+                Lifetime Pro Edition
+              </span>
+              <h3 className="text-2xl font-semibold text-white mt-4">Complete Pro Toolkit</h3>
+              <p className="text-sm text-white/60 mt-2">
+                Lifetime access for professional brand identity designers and agencies.
+              </p>
+
+              <div className="my-6 flex items-baseline gap-3">
+                <span className="text-5xl font-bold text-white">
+                  {currency === "USD" ? `$${priceUSD}` : `৳${priceBDT}`}
                 </span>
-                <h3 className="text-2xl font-semibold text-white mt-4">Complete Pro Toolkit</h3>
-                <p className="text-sm text-white/60 mt-2">
-                  Lifetime access for professional brand identity designers and agencies.
-                </p>
-
-                <div className="my-6 flex items-baseline gap-3">
-                  <span className="text-5xl font-bold text-white">
-                    {currency === "USD" ? `$${priceUSD}` : `৳${priceBDT}`}
-                  </span>
-                  <span className="text-base text-white/40 line-through">
-                    {currency === "USD" ? "$5.99" : "৳599"}
-                  </span>
-                  <span className="text-xs text-[#f15a28] font-semibold bg-[#f15a28]/20 px-2 py-0.5 rounded">
-                    Save 50%
-                  </span>
-                </div>
-
-                <ul className="space-y-3 text-sm text-white/90">
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#f15a28] font-bold">✓</span> All Pro Grid Generators &amp; Presets
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#f15a28] font-bold">✓</span> 1-Click Fast Mac &amp; Windows Installers
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#f15a28] font-bold">✓</span> 15+ Video Tutorials &amp; PDF Logo Guides
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#f15a28] font-bold">✓</span> Unlimited Commercial Use on Client Projects
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#f15a28] font-bold">✓</span> Lifetime Free Updates &amp; Direct Support
-                  </li>
-                </ul>
+                <span className="text-base text-white/40 line-through">
+                  {currency === "USD" ? "$5.99" : "৳599"}
+                </span>
+                <span className="text-xs text-[#f15a28] font-semibold bg-[#f15a28]/20 px-2 py-0.5 rounded">
+                  Save 50%
+                </span>
               </div>
 
+              <ul className="space-y-3 text-sm text-white/90">
+                <li className="flex items-center gap-2">
+                  <span className="text-[#f15a28] font-bold">✓</span> All Pro Grid Generators &amp; Presets
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-[#f15a28] font-bold">✓</span> 1-Click Fast Mac &amp; Windows Installers
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-[#f15a28] font-bold">✓</span> 15+ Video Tutorials &amp; PDF Logo Guides
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-[#f15a28] font-bold">✓</span> Unlimited Commercial Use on Client Projects
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-[#f15a28] font-bold">✓</span> Lifetime Free Updates &amp; Direct Support
+                </li>
+              </ul>
+            </div>
+
+            {IS_PAYMENT_ENABLED ? (
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -1312,8 +1308,19 @@ export default function Tools() {
                 <span>{currency === "BDT" ? "প্রিমিয়াম লাইসেন্স নিন (৳২৯৯)" : "Get Lifetime Pro ($2.99)"}</span>
                 <span>&rarr;</span>
               </motion.button>
-            </motion.div>
-          )}
+            ) : (
+              <button
+                disabled
+                type="button"
+                className="mt-8 w-full py-4 rounded-xl bg-white/10 border border-white/20 text-white/50 font-medium flex items-center justify-center gap-2 cursor-not-allowed text-center text-sm select-none"
+              >
+                <svg className="w-4 h-4 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{currency === "BDT" ? "পেমেন্ট সাময়িকভাবে বন্ধ আছে (শীঘ্রই চালু হবে)" : "Payment Coming Soon"}</span>
+              </button>
+            )}
+          </motion.div>
         </div>
       </section>
 
@@ -1562,7 +1569,7 @@ export default function Tools() {
           5. CHECKOUT / PURCHASE MODAL WITH BKASH & INTERNATIONAL TABS
           ================================================================= */}
       <AnimatePresence>
-        {SHOW_PREMIUM_OPTION && showCheckoutModal && (
+        {IS_PAYMENT_ENABLED && showCheckoutModal && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
